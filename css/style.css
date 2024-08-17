@@ -1,0 +1,41 @@
+/** FONTS **/
+@font-face {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
+}
+/* TODO: взять https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap здесь из src и проверить по юникодам, что оно нормально работает - я так обойду необходимость самому выбирать нужные мне символы */
+
+html {
+  /* text, 18.2px */
+  font-size: calc(0.56760665972944844rem + 0.7804370447450573vw);
+  /* menu */
+  font-family: "Raleway", "Times New Roman", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body {
+  margin: 0;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1416px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
