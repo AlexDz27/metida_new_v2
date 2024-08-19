@@ -3901,4 +3901,4 @@
 
 // METIDA FUNCTIONALITY
 // TODO: line at bottom; autoplay: 12000
-new Glide('.glide', {type: 'carousel', autoplay: false, gap: 0, hoverpause: false}).mount()
+new Glide('.glide', {autoplay: false, gap: 0, hoverpause: false}).mount()

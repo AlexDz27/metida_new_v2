@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 .glide__slides {
-  /* position: relative; */
+  position: relative;
   width: 100%;
   list-style: none;
   backface-visibility: hidden;

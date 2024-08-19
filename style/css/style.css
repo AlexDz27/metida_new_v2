@@ -92,11 +92,11 @@ video {
   width: 100%;
 }
 
-/* .glide__track p {  IT WORKS!
+.glide__track p {
   position: absolute;
   z-index: 10;
   color: white;
-} */
+}
 /* .glide__slides {    IT WORKS!
   position: absolute;
   z-index: 10;
@@ -107,4 +107,13 @@ video {
   position: absolute;
   z-index: 10;
   color: white;
+}
+
+.my-slider {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  bottom: 50%;
+
+  width: 4341px;
 }
