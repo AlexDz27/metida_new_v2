@@ -19,7 +19,7 @@ html {
   /* text, 18.2px */
   font-size: calc(0.56760665972944844rem + 0.7804370447450573vw);
   /* menu */
-  font-family: "Raleway", "Times New Roman", sans-serif;
+  font-family: "Raleway", Arial, sans-serif;
   font-optical-sizing: auto;
 }
 
@@ -47,58 +47,64 @@ main {
   height: 100vh;
   position: relative;
 }
-main::before {
-  content: "";
-  display: block;
+
+.triangle p {
+  color: white;
+}
+.triangle-left-to-right {
   position: absolute;
-  /* border-top: 20vw solid rgba(0, 0, 0, .5); */
-   /* TODO: %? */
-  /* border-bottom: 100vh solid rgba(0, 0, 0, .5);
-  border-right: 50vw solid transparent;
-  z-index: 1; */
 
   width: 50%;
   height: 100%;
   background-color: rgba(0, 0, 0, .5);
   z-index: 1;
   clip-path: polygon(0 0, 30% 0, 85% 100%, 0 100%);
-  cursor: default;
 }
-main::after {
-  content: "";
-  display: block;
+.triangle-right-to-left {
   position: absolute;
   top: 0;
   right: 0;
-  /* border-top: 20vw solid rgba(0, 0, 0, .5); */
-   /* TODO: %? */
-  /* border-bottom: 100vh solid rgba(0, 0, 0, .5);
-  border-right: 50vw solid transparent;
-  z-index: 1; */
 
   width: 50%;
   height: 100%;
   background-color: rgba(0, 0, 0, .5);
   z-index: 1;
   clip-path: polygon(70% 0, 100% 0, 100% 100%, 15% 100%);
-  cursor: default;
 }
+
 .glide__track {
   height: inherit;
 }
 .glide__slides {
   height: inherit;
+  /* position: static !important; */
 }
 .glide__slide {
   height: inherit;
+}
+.glide__slide p {
+  position: absolute;
+  z-index: 10;
+  color: white;
 }
 
 video {
   width: 100%;
 }
 
-.glide__slide p {
-  color: red !important;
-  position: fixed;
-  z-index: 100;
+/* .glide__track p {  IT WORKS!
+  position: absolute;
+  z-index: 10;
+  color: white;
+} */
+/* .glide__slides {    IT WORKS!
+  position: absolute;
+  z-index: 10;
+  color: white;
+}  */
+
+.test {
+  position: absolute;
+  z-index: 10;
+  color: white;
 }
