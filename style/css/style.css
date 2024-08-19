@@ -1,0 +1,104 @@
+/** FONTS **/
+@font-face {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
+}
+/* TODO: взять https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap здесь из src и проверить по юникодам, что оно нормально работает - я так обойду необходимость самому выбирать нужные мне символы */
+
+html {
+  /* text, 18.2px */
+  font-size: calc(0.56760665972944844rem + 0.7804370447450573vw);
+  /* menu */
+  font-family: "Raleway", "Times New Roman", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body {
+  margin: 0;
+
+  min-height: 150vh; /* TODO: rem */
+  background-color: #e1e1e1;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1416px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  position: relative;
+}
+main::before {
+  content: "";
+  display: block;
+  position: absolute;
+  /* border-top: 20vw solid rgba(0, 0, 0, .5); */
+   /* TODO: %? */
+  /* border-bottom: 100vh solid rgba(0, 0, 0, .5);
+  border-right: 50vw solid transparent;
+  z-index: 1; */
+
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1;
+  clip-path: polygon(0 0, 30% 0, 85% 100%, 0 100%);
+  cursor: default;
+}
+main::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* border-top: 20vw solid rgba(0, 0, 0, .5); */
+   /* TODO: %? */
+  /* border-bottom: 100vh solid rgba(0, 0, 0, .5);
+  border-right: 50vw solid transparent;
+  z-index: 1; */
+
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1;
+  clip-path: polygon(70% 0, 100% 0, 100% 100%, 15% 100%);
+  cursor: default;
+}
+.glide__track {
+  height: inherit;
+}
+.glide__slides {
+  height: inherit;
+}
+.glide__slide {
+  height: inherit;
+}
+
+video {
+  width: 100%;
+}
+
+.glide__slide p {
+  color: red !important;
+  position: fixed;
+  z-index: 100;
+}
