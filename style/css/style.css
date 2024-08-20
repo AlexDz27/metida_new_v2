@@ -94,8 +94,14 @@ main {
   opacity: .6;
   position: absolute;
   bottom: 0;
-  transition: width 6s linear;
 }
 .time-line--disappear {
   width: 0;
+}
+.time-line--test {
+  background-color: yellow;
+}
+/* TODO: mb rem */
+.time-line--appear {
+  width: 100%;
 }
