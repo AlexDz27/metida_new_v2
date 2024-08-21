@@ -9,30 +9,36 @@ const dots = document.querySelector('.dots').children
 let activeSlideIdx = 0
 const TIME = 2500 // 8000
 
+function resetTimeLine() {
+  timeLine.style.transition = ''
+  timeLine.classList.remove('time-line--disappear')
+
+  // Force reflow to ensure the changes are applied
+  void timeLine.offsetWidth; // TODO: ?
+
+  // Reapply the transition and the class to restart the animation
+  timeLine.style.transition = `width ${TIME / 1000}s linear`;
+  requestAnimationFrame(() => {
+    timeLine.classList.add('time-line--disappear');
+  });
+}
+
+let timeLineAppearIdx = 0
 timeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
 timeLine.classList.add('time-line--disappear')
 let sliderInterval = setInterval(() => {
-  // document.querySelector('.time-line').remove()
-
-  timeLine.style.transition = ''
-  timeLine.classList.remove('time-line--disappear')
+  if (timeLineAppearIdx === 0) {
+    timeLine.style.transition = ''
+    timeLine.classList.remove('time-line--disappear')
+  } else {
+    resetTimeLine()
+  }
 
   activeSlideIdx++
   if (activeSlideIdx > 2) activeSlideIdx = 0
   dots[activeSlideIdx].click()
 
-  // setTimeout(() => {
-  //   timeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
-  //   timeLine.classList.add('time-line--disappear')
-  // }, 10)
-
-  // const newTimeLine = document.createElement('div')
-  // newTimeLine.classList.add('time-line')
-  // slider.insertAdjacentElement('beforeend', newTimeLine)
-  // newTimeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
-  // setTimeout(() => {
-  //   newTimeLine.classList.add('time-line--disappear')
-  // }, 10)
+  timeLineAppearIdx++
 }, TIME)
 
 for (let dot of dots) {
@@ -48,11 +54,8 @@ for (let dot of dots) {
     activeSlideIdx = Number(dot.dataset.idx)
 
     slide(activeSlideIdx)
-
-    requestAnimationFrame(() => {
-      timeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
-      timeLine.classList.add('time-line--disappear')
-    })
+    
+    resetTimeLine()
 
     document.querySelector('.dot--active').classList.remove('dot--active')
     dot.classList.add('dot--active')
@@ -60,34 +63,6 @@ for (let dot of dots) {
   })
 }
 
-function setSlider() {
-  let sliderInterval = setInterval(() => {
-    document.querySelector('.time-line').remove()
-  
-    changeActiveSlideIdx()
-    dots[activeSlideIdx].click()
-  
-    destroyCurrentAndCreateNewTimeLine()
-  }, TIME)
-
-  return sliderInterval
-}
-
-function changeActiveSlideIdx() {
-  activeSlideIdx++
-  if (activeSlideIdx > 2) activeSlideIdx = 0
-}
-
 function slide(mult) {
   track.style.transform = `translate3d(-${slideWidth * mult}px, 0, 0)`
-}
-
-function destroyCurrentAndCreateNewTimeLine() {
-  const newTimeLine = document.createElement('div')
-  newTimeLine.classList.add('time-line')
-  slider.insertAdjacentElement('beforeend', newTimeLine)
-  newTimeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
-  setTimeout(() => {
-    newTimeLine.classList.add('time-line--disappear')
-  }, 10) // hack. IDK why not working without setTimeout
 }
