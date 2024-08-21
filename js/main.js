@@ -1,3 +1,5 @@
+// 🎯 TODO щас: ДУМАТЬ КАК ПРАВИЛЬНО РАСКИДАТЬ changeActive - там нужен будет аргумент для кликов)
+
 // SLIDER
 const slider = document.querySelector('.slider')
 const track = document.querySelector('.slider-track')
@@ -10,12 +12,27 @@ const TIME = 2500 // 8000
 timeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
 timeLine.classList.add('time-line--disappear')
 let sliderInterval = setInterval(() => {
-  document.querySelector('.time-line').remove()
+  // document.querySelector('.time-line').remove()
 
-  changeActiveSlideIdx()
+  timeLine.style.transition = ''
+  timeLine.classList.remove('time-line--disappear')
+
+  activeSlideIdx++
+  if (activeSlideIdx > 2) activeSlideIdx = 0
   dots[activeSlideIdx].click()
 
-  destroyCurrentAndCreateNewTimeLine()
+  // setTimeout(() => {
+  //   timeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
+  //   timeLine.classList.add('time-line--disappear')
+  // }, 10)
+
+  // const newTimeLine = document.createElement('div')
+  // newTimeLine.classList.add('time-line')
+  // slider.insertAdjacentElement('beforeend', newTimeLine)
+  // newTimeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
+  // setTimeout(() => {
+  //   newTimeLine.classList.add('time-line--disappear')
+  // }, 10)
 }, TIME)
 
 for (let dot of dots) {
@@ -30,9 +47,12 @@ for (let dot of dots) {
   dot.addEventListener('click', () => {
     activeSlideIdx = Number(dot.dataset.idx)
 
-    changeActiveSlideIdx()
     slide(activeSlideIdx)
-    destroyCurrentAndCreateNewTimeLine()
+
+    requestAnimationFrame(() => {
+      timeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
+      timeLine.classList.add('time-line--disappear')
+    })
 
     document.querySelector('.dot--active').classList.remove('dot--active')
     dot.classList.add('dot--active')
