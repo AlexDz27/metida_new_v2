@@ -7,10 +7,10 @@ const dots = document.querySelector('.dots').children
 const videos = document.querySelectorAll('.slider-track video')
 let activeSlideIdx = 0
 // const TIME = 2500 // 8000
-const TIME = 3000 // 8000
+const TIME = 2500 // 8000
 let timeLineAnimStartTime = new Date()
 let timeLineAnimTimeLeft = TIME
-let isSliderStopped = false
+let isSliderStopped = false // behavior of first true is undefined
 let sliderTimeout
 
 makeTimeLineDisappear()
@@ -55,6 +55,11 @@ for (let video of videos) {
       makeTimeLineStop()
       const elapsedTime = new Date() - timeLineAnimStartTime
       timeLineAnimTimeLeft = timeLineAnimTimeLeft - elapsedTime
+
+      videos.forEach((video) => {
+        video.pause()
+        video.title = 'Запустить видео'
+      })
     } else {
       timeLineAnimStartTime = new Date()
       makeTimeLineGoAgain()
@@ -63,6 +68,11 @@ for (let video of videos) {
         timeLineAnimTimeLeft = TIME
         sliderIntervalF()
       }, timeLineAnimTimeLeft)
+
+      videos.forEach((video) => {
+        video.play()
+        video.title = 'Остановить видео'
+      })
     }
   })
 }

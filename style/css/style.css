@@ -50,14 +50,26 @@ main {
 
 .slider {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .slider-track {
   display: flex;
   height: 100vh;
   width: max-content;
-  will-change: transform;
+  /* will-change: transform; */
   transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.slide {
+  position: relative;
+  color: yellow;
+}
+.slide-cont {
+  position: absolute;
+  z-index: 5;
+}
+.slide-cont-right {
+  top: 0;
+  right: 0;
 }
 .slider video {
   width: 100vw;
@@ -99,10 +111,22 @@ main {
 .time-line--disappear {
   width: 0;
 }
-.time-line--test {
-  background-color: yellow;
+
+.triangle {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1;
 }
-/* TODO: mb rem */
-.time-line--appear {
-  width: 100%;
+.triangle-left-to-right {
+  clip-path: polygon(0 0, 30% 0, 85% 100%, 0 100%);
+}
+.triangle-right-to-left {
+  right: 0;
+  clip-path: polygon(70% 0, 100% 0, 100% 100%, 15% 100%);
+}
+.triangle p {
+  color: white;
 }
