@@ -54,8 +54,6 @@ for (let video of videos) {
       clearInterval(sliderInterval)
       makeTimeLineStop()
       const elapsedTime = new Date() - timeLineAnimStartTime
-      console.log('elapsedTime: ' + elapsedTime)
-      console.log('calcs: ' + (timeLineAnimTimeLeft - elapsedTime))
       timeLineAnimTimeLeft = timeLineAnimTimeLeft - elapsedTime
     } else {
       timeLineAnimStartTime = new Date()
@@ -71,7 +69,6 @@ for (let video of videos) {
 
 
 function sliderIntervalF() {
-  console.log('interval function has just run')
   makeTimeLineAppear()
 
   activeSlideIdx++
