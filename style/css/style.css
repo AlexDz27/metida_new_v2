@@ -63,6 +63,7 @@ main {
   width: 100vw;
   flex-shrink: 0;
   object-fit: cover;
+  cursor: pointer;
 }
 .dots {
   width: 4rem;

@@ -1,28 +1,16 @@
-// 🎯 TODO щас: ДУМАТЬ КАК ПРАВИЛЬНО РАСКИДАТЬ changeActive - там нужен будет аргумент для кликов)
-
 // SLIDER
 const slider = document.querySelector('.slider')
 const track = document.querySelector('.slider-track')
 const slideWidth = document.querySelector('.slider-track video').clientWidth
 const timeLine = document.querySelector('.time-line')
 const dots = document.querySelector('.dots').children
+const videos = document.querySelectorAll('.slider-track video')
 let activeSlideIdx = 0
-const TIME = 2500 // 8000
+// const TIME = 2500 // 8000
+const TIME = 5000 // 8000
 
-timeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
-timeLine.classList.add('time-line--disappear')
-let sliderInterval = setInterval(() => {
-  timeLine.style.transition = ''
-  timeLine.classList.remove('time-line--disappear')
-  void timeLine.offsetWidth
-
-  activeSlideIdx++
-  if (activeSlideIdx > 2) activeSlideIdx = 0
-  dots[activeSlideIdx].click()
-
-  timeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
-  timeLine.classList.add('time-line--disappear')
-}, TIME)
+makeTimeLineDisappear()
+let sliderInterval = setInterval(sliderIntervalF, TIME)
 
 for (let dot of dots) {
   dot.addEventListener('mouseover', () => {
@@ -36,13 +24,46 @@ for (let dot of dots) {
   dot.addEventListener('click', () => {
     activeSlideIdx = Number(dot.dataset.idx)
     slide(activeSlideIdx)
+    clearInterval(sliderInterval)
+    makeTimeLineAppear()
 
     document.querySelector('.dot--active').classList.remove('dot--active')
     dot.classList.add('dot--active')
     dot.classList.remove('dot--hovered')
+
+    makeTimeLineDisappear()
+    sliderInterval = setInterval(sliderIntervalF, TIME)
   })
+}
+
+// TODO: icon
+for (let video of videos) {
+  video.addEventListener('click', () => {
+    clearInterval(sliderInterval)
+  })
+}
+
+
+function sliderIntervalF() {
+  makeTimeLineAppear()
+
+  activeSlideIdx++
+  if (activeSlideIdx > 2) activeSlideIdx = 0
+  dots[activeSlideIdx].click()
+
+  makeTimeLineDisappear()
 }
 
 function slide(mult) {
   track.style.transform = `translate3d(-${slideWidth * mult}px, 0, 0)`
+}
+
+function makeTimeLineDisappear() {
+  timeLine.style.transition = `width ${TIME / 1000 + 's'} linear`
+  timeLine.classList.add('time-line--disappear')
+}
+function makeTimeLineAppear() {
+  timeLine.style.transition = ''
+  timeLine.classList.remove('time-line--disappear')
+  void timeLine.offsetWidth
 }
