@@ -7,7 +7,8 @@ const dots = document.querySelector('.dots').children
 const videos = document.querySelectorAll('.slider-track video')
 let activeSlideIdx = 0
 // const TIME = 2500 // 8000
-const TIME = 5000 // 8000
+const TIME = 4000 // 8000
+let timeLineAnimStartTime = new Date()
 
 makeTimeLineDisappear()
 let sliderInterval = setInterval(sliderIntervalF, TIME)
@@ -37,14 +38,33 @@ for (let dot of dots) {
 }
 
 // TODO: icon
+let isSliderStopped = false
+let timeLineAnimTimeLeft = TIME
 for (let video of videos) {
   video.addEventListener('click', () => {
-    clearInterval(sliderInterval)
+    isSliderStopped = !isSliderStopped
+    if (isSliderStopped) {
+      clearInterval(sliderInterval)
+      makeTimeLineStop()
+      const elapsedTime = new Date() - timeLineAnimStartTime
+      console.log('elapsedTime: ' + elapsedTime)
+      console.log('calcs: ' + (timeLineAnimTimeLeft - elapsedTime))
+      timeLineAnimTimeLeft = timeLineAnimTimeLeft - elapsedTime
+    } else {
+      timeLineAnimStartTime = new Date()
+      makeTimeLineGoAgain()
+      setTimeout(() => {
+        sliderIntervalF()
+        console.log('wtf')
+        // sliderInterval = setInterval(sliderIntervalF, TIME)
+      }, timeLineAnimTimeLeft)
+    }
   })
 }
 
 
 function sliderIntervalF() {
+  console.log('interval function has just run')
   makeTimeLineAppear()
 
   activeSlideIdx++
@@ -66,4 +86,11 @@ function makeTimeLineAppear() {
   timeLine.style.transition = ''
   timeLine.classList.remove('time-line--disappear')
   void timeLine.offsetWidth
+}
+function makeTimeLineStop() {
+  timeLine.style.width = timeLine.offsetWidth + 'px'
+}
+function makeTimeLineGoAgain() {
+  timeLine.style.width = ''
+  timeLine.style.transition = `width ${timeLineAnimTimeLeft / 1000 + 's'} linear`
 }
