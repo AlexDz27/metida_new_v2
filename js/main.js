@@ -6,8 +6,8 @@ const timeLine = document.querySelector('.time-line')
 const dots = document.querySelector('.dots').children
 const videos = document.querySelectorAll('.slider-track video')
 let activeSlideIdx = 0
+const TIME = 8000
 // const TIME = 2500 // 8000
-const TIME = 2500 // 8000
 let timeLineAnimStartTime = new Date()
 let timeLineAnimTimeLeft = TIME
 let isSliderStopped = false // behavior of first true is undefined
@@ -45,7 +45,6 @@ for (let dot of dots) {
   })
 }
 
-// TODO: icon
 for (let video of videos) {
   video.addEventListener('click', () => {
     isSliderStopped = !isSliderStopped
@@ -81,9 +80,15 @@ for (let video of videos) {
 function sliderIntervalF() {
   makeTimeLineAppear()
 
+  // if (!isSliderStopped) {
+  //   videos[activeSlideIdx].pause()
+  // }
   activeSlideIdx++
   if (activeSlideIdx > 2) activeSlideIdx = 0
   dots[activeSlideIdx].click()
+  // if (!isSliderStopped) {
+  //   videos[activeSlideIdx].play()
+  // }
 
   makeTimeLineDisappear()
 }
