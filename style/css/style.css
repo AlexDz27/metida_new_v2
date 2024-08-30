@@ -27,7 +27,9 @@ body {
   margin: 0;
 
   min-height: 150vh; /* TODO: rem */
-  background-color: #f7f7f7;
+  /* TODO: rem) */
+  /* background-color: #f7f7f7; */
+  background-color: white; /* white is better */
 }
 body a {
   text-decoration: none;
@@ -131,6 +133,135 @@ main {
   color: white;
 }
 
+section h1 {
+  font-family: "PT Sans", "Times New Roman", sans-serif;
+  text-align: center;
+  font-size: 2.3rem;
+  margin-top: 3.2rem;
+  margin-bottom: 2.7rem;
+}
+
+.popular-items {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+.popular-item {
+  /* display: inline-block; */ /* TODO: should be another display cuz of dgrid */
+  /* display: flex;
+  flex-direction: column; */
+  /* TODO: min rem) */
+  min-width: 5rem;
+  min-height: 4rem;
+  border: 1px solid gray;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.popular-item:hover {
+  transform: scale(1.1);
+}
+.popular-item-photo {
+  
+}
+.popular-item h2 {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.popular h3 {
+  font-family: "PT Sans";
+  text-align: center;
+}
+.hand-cont {
+  position: relative;
+  text-align: center;
+}
+.hand-cont span {
+  /* position: absolute; */
+  font-size: 2rem;
+  /* transition: margin-top 700ms linear; */
+  animation: float 1.9s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(8px);
+  }
+}
+
+.catalogue {
+  margin-bottom: 5rem;
+  position: relative;
+}
+.catalogue h1 {
+  margin-bottom: 0;
+}
+.catalogue-cat {
+  text-align: center;
+  margin-bottom: 2.7rem;
+}
+.catalogue-cat label {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid black;
+  border-radius: 9px;
+  position: relative;
+}
+.catalogue-cat select {
+  font-size: inherit;
+  font-family: Raleway, Arial, sans-serif;
+  border: none;
+  position: relative;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* .catalogue-cat label::after {
+  content: "q";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+} */
+.catalogue-cont {
+  display: flex;
+  justify-content: space-between;
+}
+.catalogue-item {
+  border: none;
+  position: relative;
+}
+/* .catalogue-item:nth-child(1)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: gray;
+  top: 0;
+  right: 0;
+} */
+.catalogue-item-photo {
+  max-width: 150px;
+  min-height: 150px;
+  border: 1px solid gray;
+  margin-left: auto;
+  margin-right: auto;
+}
+.decorative {
+  min-height: 312px; /* TODO: now it's just for fast */
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.dec-item {
+  min-width: 5rem;
+  min-height: 5rem;
+  background-color: rgba(0, 0, 0, .3);
+}
+
 .parallax {
   text-align: center;
   padding-top: 3.5rem;
@@ -140,7 +271,14 @@ main {
   background-size: cover;
   color: white;
 }
+/* TODO: swap to gradient) */
+.parallax h1 {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, .5);
+  padding: .3rem 1rem;
+}
 .parallax span {
-  position: relative;
-  top: 2px;
+  /* TODO: rem if looks ok + rem html span */
+  /* position: relative;
+  top: 2px; */
 }

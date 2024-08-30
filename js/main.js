@@ -116,3 +116,39 @@ function makeTimeLineGoAgain() {
   // TODO: (ren) makeTimeLineDisappear(ARG)
   timeLine.classList.add('time-line--disappear')
 }
+
+// CATALOGUE
+// Dropdown fix
+// const ddLabel = document.querySelector('.catalogue-cat label')
+// const dd = ddLabel.querySelector('select')
+// const GOOD_DESIGN_AMOUNT = 8
+// dd.onchange = (e) => {
+//   console.log(e.target.value)
+//   console.log(e.target.value.length)
+//   if (e.target.value.length !== GOOD_DESIGN_AMOUNT) {
+//     const delta = e.target.value.length - GOOD_DESIGN_AMOUNT
+//     // ddLabel.style.width = `${ddLabel.style.width + (delta * 5)}px`
+//     ddLabel.style.width = `${ddLabel.offsetWidth + (delta * 5)}px`
+//   }
+// }
+
+const db = {
+
+}
+
+const dd = document.querySelector('.catalogue-cat label select')
+const kuk = document.querySelectorAll('.kuk')
+const psh = document.querySelector('.psh')
+dd.onchange = (evt) => {
+  if (evt.target.value === 'Кукуруза') {
+    for (const k of kuk) {
+      k.style.display = 'flex'
+    }
+    psh.style.display = 'none'
+  } else if (evt.target.value === 'Пшеница') {
+    psh.style.display = 'flex'
+    for (const k of kuk) {
+      k.style.display = 'none'
+    }
+  }
+}
