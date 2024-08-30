@@ -16,6 +16,11 @@ let sliderTimeout
 makeTimeLineDisappear()
 let sliderInterval = setInterval(sliderIntervalF, TIME)
 
+// TODO: rem
+setTimeout(() => {
+  videos[0].click()
+}, 200)
+
 for (let dot of dots) {
   dot.addEventListener('mouseover', () => {
     if (dot.classList.contains('dot--active')) return
@@ -80,15 +85,9 @@ for (let video of videos) {
 function sliderIntervalF() {
   makeTimeLineAppear()
 
-  // if (!isSliderStopped) {
-  //   videos[activeSlideIdx].pause()
-  // }
   activeSlideIdx++
   if (activeSlideIdx > 2) activeSlideIdx = 0
   dots[activeSlideIdx].click()
-  // if (!isSliderStopped) {
-  //   videos[activeSlideIdx].play()
-  // }
 
   makeTimeLineDisappear()
 }
