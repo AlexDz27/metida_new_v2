@@ -1,6 +1,7 @@
 // SLIDER
 const slider = document.querySelector('.slider')
 const track = document.querySelector('.slider-track')
+const doubleSliderTrack = document.querySelector('.double-slider-slider-track')
 const slideWidth = document.querySelector('.slider-track video').clientWidth
 const timeLine = document.querySelector('.time-line')
 const dots = document.querySelector('.dots').children
@@ -94,6 +95,7 @@ function sliderIntervalF() {
 
 function slide(mult) {
   track.style.transform = `translate3d(-${slideWidth * mult}px, 0, 0)`
+  doubleSliderTrack.style.transform = `translate3d(-${slideWidth * mult}px, 0, 0)`
 }
 
 function makeTimeLineDisappear() {
