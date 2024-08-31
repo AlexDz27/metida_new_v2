@@ -142,13 +142,13 @@ const psh = document.querySelector('.psh')
 dd.onchange = (evt) => {
   if (evt.target.value === 'Кукуруза') {
     for (const k of kuk) {
-      k.style.display = 'flex'
+      k.style.display = 'grid'
     }
     psh.style.display = 'none'
   } else if (evt.target.value === 'Пшеница') {
     psh.style.display = 'flex'
     for (const k of kuk) {
-      k.style.display = 'none'
+      k.style.display = 'grid'
     }
   }
 }

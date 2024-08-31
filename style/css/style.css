@@ -142,8 +142,9 @@ section h1 {
 }
 
 .popular-items {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 95px;
   margin-bottom: 5rem;
 }
 .popular-item {
@@ -268,7 +269,8 @@ section h1 {
   /* grid-template-columns: 354px 354px 354px; */
   /* column-gap: 47.5px; */
   /* background-color: rgba(0, 0, 0, .3); */
-  top: 244px;
+  /* top: 244px; */
+  top: calc(50% - 156px / 2 - 3%);
 }
 .dec-item {
   /* width: 272.5px; */
