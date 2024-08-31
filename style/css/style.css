@@ -66,6 +66,7 @@ img {
 main {
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 .slider {
@@ -135,7 +136,7 @@ main {
   position: absolute;
   color: white;
   top: 45%;
-  /* left: 1%; */
+  left: 1%;
   z-index: 1000;
   /* TODO: these 2 should work ok. If not - do t else */
   width: 100%;
@@ -149,7 +150,6 @@ main {
 .double-slider-slide {
   display: flex;
   justify-content: space-between;
-  padding-left: 1%;
   padding-right: 1%;
   width: 100vw;
 }
@@ -180,6 +180,28 @@ main {
   position: relative;
   top: 24%;
   left: 2%;
+}
+
+.who {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  /* TODO: try different fonts */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* TODO: wont work) need 1fr 20% 1fr */
+  column-gap: 10%;
+}
+.who h1 {
+  font-family: Monorale, Arial, sans-serif;
+  font-size: 3rem;
+}
+.who b {
+  font-size: 2rem;
+  position: relative;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section h1 {
