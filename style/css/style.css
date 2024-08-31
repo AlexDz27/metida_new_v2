@@ -1,10 +1,24 @@
 /** FONTS **/
 @font-face {
-  font-family: Raleway;
+  font-family: Monorale;
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/Monorale-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: Monorale;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Monorale-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: Monorale;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Monorale-Bold.woff") format("woff");
 }
 @font-face {
   font-family: "PT Sans";
@@ -19,7 +33,7 @@ html {
   /* text, 18.2px */
   font-size: calc(0.56760665972944844rem + 0.7804370447450573vw);
   /* menu */
-  font-family: "Raleway", Arial, sans-serif;
+  font-family: Monorale, Arial, sans-serif;
   font-optical-sizing: auto;
 }
 
@@ -216,7 +230,7 @@ section h1 {
 }
 .catalogue-cat select {
   font-size: inherit;
-  font-family: Raleway, Arial, sans-serif;
+  font-family: Monorale, Arial, sans-serif;
   border: none;
   position: relative;
   font-weight: bold;
@@ -232,7 +246,7 @@ section h1 {
 .catalogue-cont {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 95px;
+  /* column-gap: 95px; */
   /* row-gap: 41px; */
   row-gap: 81px;
   position: relative;
@@ -240,6 +254,7 @@ section h1 {
 .catalogue-item {
   border: none;
   position: relative;
+  text-align: center;
 }
 /* .catalogue-item:nth-child(1)::after {
   content: "";
@@ -279,10 +294,10 @@ section h1 {
   position: relative;
 }
 .dec-item:nth-child(1) {
-  margin-right: 24px;
+  /* margin-right: 24px; */
 }
 .dec-item:nth-child(3) {
-  margin-right: -24px;
+  /* margin-right: -24px; */
 }
 .dec-item:last-child {
   border-right: none;
@@ -290,12 +305,13 @@ section h1 {
 .dec-item::before {
   content: "";
   display: block;
-  width: 50%;
+  width: 115px; /* TODO: maybe use js to make it so that не ебется. Or maybe rem if design looks bad after finishing */
   height: .5px;
   background-color: gray;
   position: absolute;
   top: 50%;
-  left: 75%;
+  /* left: 75%; */
+  left: 84%;
 }
 .dec-item:last-child::before {
   content: "";
