@@ -139,18 +139,21 @@ const db = {
 }
 
 const dd = document.querySelector('.catalogue-cat label select')
-const kuk = document.querySelectorAll('.kuk')
+const kuk = document.querySelector('.kuk')
 const psh = document.querySelector('.psh')
+const rozh = document.querySelector('.rozh')
 dd.onchange = (evt) => {
   if (evt.target.value === 'Кукуруза') {
-    for (const k of kuk) {
-      k.style.display = 'grid'
-    }
+    kuk.style.display = 'grid'
     psh.style.display = 'none'
+    rozh.style.display = 'none'
   } else if (evt.target.value === 'Пшеница') {
-    psh.style.display = 'flex'
-    for (const k of kuk) {
-      k.style.display = 'grid'
-    }
+    psh.style.display = 'grid'
+    kuk.style.display = 'none'
+    rozh.style.display = 'none'
+  } else if (evt.target.value === 'Рожь') {
+    rozh.style.display = 'grid'
+    kuk.style.display = 'none'
+    psh.style.display = 'none'
   }
 }

@@ -64,7 +64,6 @@ img {
 }
 
 main {
-  height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
@@ -75,7 +74,6 @@ main {
 }
 .slider-track {
   display: flex;
-  height: 100vh;
   width: max-content;
   /* will-change: transform; */
   transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -97,6 +95,7 @@ main {
   flex-shrink: 0;
   object-fit: cover;
   cursor: pointer;
+  height: 100%; /* I hope that works fine afterwards bc previosly on lap was bug that triangles would overflow vertically */
 }
 .dots {
   width: 4rem;
@@ -162,6 +161,7 @@ main {
   top: 0;
   width: 50%;
   height: 100%;
+  /* height: calc(100% - .5rem); */
   background-color: rgba(0, 0, 0, .5);
   z-index: 1;
 }
@@ -183,13 +183,22 @@ main {
 }
 
 .who {
+  background-image: linear-gradient(
+    55deg,
+    hsl(123deg 100% 20%) 0%,
+    hsl(129deg 75% 43%) 32%,
+    hsl(64deg 100% 38%) 62%,
+    hsl(3deg 84% 60%) 100%
+  );
+}
+.who-cont {
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
-  /* TODO: try different fonts */
   display: grid;
-  grid-template-columns: 1fr 1fr; /* TODO: wont work) need 1fr 20% 1fr */
+  grid-template-columns: 1fr 1fr;
   column-gap: 10%;
+  color: white;
 }
 .who h1 {
   font-family: Monorale, Arial, sans-serif;
@@ -202,6 +211,11 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+canvas {
+  /* TODO: canvas */
+  width: 100%;
+  height: 400px;
 }
 
 section h1 {
@@ -225,10 +239,13 @@ section h1 {
   /* TODO: min rem) */
   min-width: 5rem;
   min-height: 4rem;
-  border: 1px solid gray;
   padding: 0 1rem;
   cursor: pointer;
   transition: transform 0.3s ease;
+  padding-top: 1rem;
+}
+.popular-items .popular-item {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .popular-item:hover {
   transform: scale(1.1);
@@ -368,7 +385,7 @@ section h1 {
   position: absolute;
   top: 50%;
   /* left: 75%; */
-  left: 84%;
+  left: 84%; /* TODO: bug here on laptop. Use calc) */
 }
 .dec-item:last-child::before {
   content: "";
