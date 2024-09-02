@@ -1,6 +1,6 @@
 Categories
   Items
-    id name features desc price photo production ..?
+    id name features desc price? photo production ..?
 --------------------------------------------
 Categories
   Кукуруза

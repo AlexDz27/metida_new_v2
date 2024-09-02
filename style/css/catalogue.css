@@ -1,0 +1,40 @@
+header {
+  /* background-image: linear-gradient(
+    55deg,
+    hsla(3deg, 84%, 60%, 0.7) 0%,
+    hsla(64deg, 100%, 38%, 0.7) 32%,
+    hsla(129deg, 75%, 43%, 0.7) 62%,
+    hsla(123deg, 100%, 20%, 0.7) 100%
+  ); */
+  background-image: linear-gradient(
+    55deg,
+    hsla(3deg, 100%, 57%, 0.7) 0%,
+    hsla(129deg, 75%, 43%, 0.7) 62%,
+    hsla(123deg, 100%, 20%, 0.7) 100%
+  );
+}
+header .logo-cont {
+  width: 285px;
+  position: static;
+}
+.header-row-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-row-1 span {
+  color: white;
+}
+header nav {
+
+}
+.header-row-2.container {
+  color: white;
+}
+.header-row-2.container a:hover {
+  text-decoration: underline;
+}
+
+.catalogue h2 {
+  font-weight: normal;
+}
