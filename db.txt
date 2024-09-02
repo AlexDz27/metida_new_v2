@@ -1,0 +1,11 @@
+Categories
+  Items
+    id name features desc price photo production ..?
+--------------------------------------------
+Categories
+  Кукуруза
+
+  Пшеница
+
+  Рожь озимая
+    8 КВС Боно F₁ 

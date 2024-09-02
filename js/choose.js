@@ -24,7 +24,9 @@ function drop(e) {
   e.preventDefault();
   const id = e.dataTransfer.getData('text');
   const draggableElement = document.getElementById(id);
-  draggableElement.querySelector('p').remove()
+  const clonedElement = draggableElement.cloneNode(true)
+  clonedElement.querySelector('p').remove()
 
-  e.target.appendChild(draggableElement);
+  e.target.innerText = ''
+  e.target.appendChild(clonedElement);
 }

@@ -135,7 +135,11 @@ function makeTimeLineGoAgain() {
 // }
 
 const db = {
-
+  categories: {
+    'Кукуруза': [],
+    'Пшеница': [],
+    'Рожь озимая': []
+  }
 }
 
 const dd = document.querySelector('.catalogue-cat label select')
@@ -151,7 +155,7 @@ dd.onchange = (evt) => {
     psh.style.display = 'grid'
     kuk.style.display = 'none'
     rozh.style.display = 'none'
-  } else if (evt.target.value === 'Рожь') {
+  } else if (evt.target.value === 'Рожь озимая') {
     rozh.style.display = 'grid'
     kuk.style.display = 'none'
     psh.style.display = 'none'
