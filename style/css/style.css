@@ -83,6 +83,12 @@ main {
   position: relative;
   color: yellow;
 }
+/* TODO: rem */
+.slide img {
+  width: 100vw;
+  object-fit: cover;
+  height: 100%;
+}
 .slide-cont {
   position: absolute;
   z-index: 5;
@@ -157,7 +163,8 @@ main {
   width: 100vw;
 }
 .double-slider-cont {
-  max-width: 29%;
+  /* max-width: 29%; */
+  max-width: 27%;
   line-height: 1.35rem;
   position: relative;
   top: 22%;
@@ -215,8 +222,7 @@ main {
     55deg,
     hsl(123deg 100% 20%) 0%,
     hsl(129deg 75% 43%) 32%,
-    hsl(64deg 100% 38%) 62%,
-    hsl(3deg 84% 60%) 100%
+    hsl(3deg 84% 60%) 97%
   );
 }
 .who-cont {

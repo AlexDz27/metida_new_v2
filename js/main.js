@@ -2,25 +2,28 @@
 const slider = document.querySelector('.slider')
 const track = document.querySelector('.slider-track')
 const doubleSliderTrack = document.querySelector('.double-slider-slider-track')
-const slideWidth = document.querySelector('.slider-track video').clientWidth
+// TODO: uncom and rem
+// const slideWidth = document.querySelector('.slider-track video').clientWidth
+const slideWidth = document.querySelector('.slider-track img').clientWidth
 const timeLine = document.querySelector('.time-line')
 const dots = document.querySelector('.dots').children
 const videos = document.querySelectorAll('.slider-track video')
 let activeSlideIdx = 0
-const TIME = 8000
+const TIME = 6000
 // const TIME = 2500 // 8000
 let timeLineAnimStartTime = new Date()
 let timeLineAnimTimeLeft = TIME
 let isSliderStopped = false // behavior of first true is undefined
 let sliderTimeout
 
-makeTimeLineDisappear()
-let sliderInterval = setInterval(sliderIntervalF, TIME)
+// TODO: uncom
+// makeTimeLineDisappear()
+// let sliderInterval = setInterval(sliderIntervalF, TIME)
 
 // TODO: rem
-setTimeout(() => {
-  videos[0].click()
-}, 200)
+// setTimeout(() => {
+//   videos[0].click()
+// }, 200)
 
 for (let dot of dots) {
   dot.addEventListener('mouseover', () => {
@@ -35,7 +38,8 @@ for (let dot of dots) {
     activeSlideIdx = Number(dot.dataset.idx)
     slide(activeSlideIdx)
     clearTimeout(sliderTimeout)
-    clearInterval(sliderInterval)
+    // TODO: uncom
+    // clearInterval(sliderInterval)
     makeTimeLineAppear()
 
     document.querySelector('.dot--active').classList.remove('dot--active')
@@ -45,8 +49,9 @@ for (let dot of dots) {
     timeLineAnimStartTime = new Date()
     timeLineAnimTimeLeft = TIME
     if (!isSliderStopped) {
-      makeTimeLineDisappear()
-      sliderInterval = setInterval(sliderIntervalF, TIME)
+      // TODO: uncom
+      // makeTimeLineDisappear()
+      // sliderInterval = setInterval(sliderIntervalF, TIME)
     }
   })
 }
@@ -56,7 +61,7 @@ for (let video of videos) {
     isSliderStopped = !isSliderStopped
     if (isSliderStopped) {
       clearTimeout(sliderTimeout)
-      clearInterval(sliderInterval)
+      // clearInterval(sliderInterval)
       makeTimeLineStop()
       const elapsedTime = new Date() - timeLineAnimStartTime
       timeLineAnimTimeLeft = timeLineAnimTimeLeft - elapsedTime
