@@ -8,13 +8,17 @@ const TIME = 3000
 let isSliderStopped = false // behavior of first true is undefined
 let sliderTimeout
 
+let sliderInterval = setInterval(sliderIntervalF, TIME)
+
+// fix того, что слайдер ебется слайдами при +зуме и -зуме
+console.debug(slideWidth)
 window.onresize = () => {
   void document.querySelector('.slider-track img').clientWidth
   slideWidth = document.querySelector('.slider-track img').clientWidth
-  console.log(slideWidth)
+  console.debug(slideWidth)
+  console.debug(document.documentElement.clientWidth, 'document.documentElement.clientWidth')
+  track.style.transform = `translate3d(-${document.documentElement.clientWidth * activeSlideIdx}px, 0, 0)`
 }
-
-// let sliderInterval = set Interval(sliderIntervalF, TIME)
 
 function sliderIntervalF() {
   activeSlideIdx++; if (activeSlideIdx > 2) activeSlideIdx = 0;
