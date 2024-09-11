@@ -313,25 +313,36 @@ nav a:hover {
 }
 .advantages {
   color: white;
-  display: flex;
-  flex-wrap: wrap;
-  width: 1064px; /* TODO: change */
+  display: grid;
+  grid-template-columns: 281px 281px 281px;
+  grid-template-rows: 116px 134px;
+  column-gap: 70px;
+  row-gap: 40px;
+  /* width: 1064px; */ /* TODO: change */
 }
 .advantage {
-  padding-top: 30px;
+  /* padding-top: 30px;
   padding-left: 30px;
   padding-bottom: 20px;
   padding-right: 30px;
-  width: 221px;
+  box-sizing: border-box;
   border-radius: 15px;
-  margin-right: 70px;
+  background-color: #80C34E;
+  font-size: 16px; */
+
   background-color: #80C34E;
   font-size: 16px;
-  margin-bottom: 40px;
+  border-radius: 15px;
+  padding-left: 30px;
+  padding-top: 25px;
+  padding-right: 20px;
+}
+.advantage:nth-child(3) {
+  grid-row: span 2;
 }
 .advantage > span {
   display: inline-block;
-  margin-bottom: 19px;
+  margin-bottom: 13px;
   font-size: 48px;
 }
 .advantage .near-math-sign {
