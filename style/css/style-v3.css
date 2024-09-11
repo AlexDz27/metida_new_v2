@@ -1,11 +1,45 @@
+/** FONTS **/
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/Roboto/Roboto-Black.ttf") format("truetype");
+}
+
 html {
-  font-family: Arial;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 400;
+  font-optical-sizing: auto;
 }
 
 body {
   margin: 0;
   min-height: 150vh; /* TODO: rem */
-  background-color: #f7f7f7; /* TODO: rem */
+  /* background-color: #f7f7f7; */ /* TODO: rem */
 }
 body a {
   text-decoration: none;
@@ -17,12 +51,119 @@ img {
 }
 
 .cont {
-  max-width: 1320px /* долнж быть лучше чем 1416, тк делится еще и на 5. Эту сетку юзает бутстрап */;
+  /* TODO: rem */
+  /* max-width: 1320px; */ /* долнж быть лучше чем 1416, тк делится еще и на 5. Эту сетку юзает бутстрап */
+  /* max-width: 1140px; */ /* по тому, как она нарисовала, надо брать такую сетку */
+  max-width: 1200px; /* всё-таки 1200 у нее сетка */
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
 }
+.icon {
+  display: flex;
+  background-color: #80C34E;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.btn-cta {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 0px 0px #F3DC65;
+  background: linear-gradient(
+    351deg,
+    #E78E04 0%,
+    #F6D096 45%,
+    #E78E04 100%
+  ),
+  linear-gradient(
+    -88deg,
+    #F3DC65 0%,
+    #F5BB61 100%
+  )
+  ;
+  border-radius: 800px;
+  height: 47px;
+  padding-left: 49px;
+  padding-right: 49px;
+  border: none;
+  padding-top: 3px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.btn-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 800px;
+  background: linear-gradient(
+    359deg,
+    #E78E04 0%,
+    #F6D096 45%,
+    #E78E04 100%
+  ),
+  linear-gradient(
+    -88deg,
+    #F3DC65 0%,
+    #F5BB61 100%
+  )
+  ;
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+.btn-cta:hover::before {
+  opacity: 1;
+}
+
+.top-menu {
+  height: 150px;
+  height: 92px;
+  box-sizing: border-box;
+  padding-top: 16px;
+  padding-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-menu img {
+  width: auto;
+}
+.top-menu-contacts {
+  margin-top: 14px;
+  color: #494949;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+}
+.top-menu-contacts div:first-child {
+  margin-right: 35px;
+}
+.top-menu-contacts div:last-child {
+  margin-right: 0;
+}
+.top-menu-contacts > div {
+  display: flex;
+  align-items: center;
+}
+.top-menu-contacts > div .icon {
+  margin-right: 8px;
+}
+/* TODO: rem */
+/* .top-menu-contacts-email {
+  font-weight: 500;
+}
+.top-menu-contacts-phone {
+  font-weight: 700;
+} */
 
 .slider {
   position: relative;
@@ -34,14 +175,53 @@ img {
   transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
   height: 413px;
 }
+/* TODO: rem? */
 .slider-track img {
   /* flex-shrink: 0;
   flex-basis: 100%; */
   object-fit: cover; /* вылечило сплющивание */
 }
-.slide {
-  flex-shrink: 0;
-  flex-basis: 100%;
+.slider-track video {
+  cursor: pointer;
+  width: 100%;
+  object-fit: cover;
 }
-.slide {
+.slider-track video:nth-child(2) {
+  margin-right: 1px; /* фикс чтобы, когда слайдер переходит на второе видео, третье видео не начиналось вместе со вторым */
+}
+.dots {
+  width: 106px;
+  height: 30px;
+  position: absolute;
+  /* left: calc(50% - 3rem / 2); */
+  left: calc(50% - 53px);
+  bottom: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #37551F;
+  opacity: .7;
+  cursor: pointer;
+}
+.dot--active {
+  outline: 3px solid #80C34E;
+}
+.dot--hovered {
+  background-color: #a2d27e;
+}
+.time-line {
+  width: 100%;
+  height: 10px;
+  background-color: #f7f7f7;
+  opacity: .6;
+  position: absolute;
+  bottom: 0;
+}
+.time-line--disappear {
+  width: 0;
 }
