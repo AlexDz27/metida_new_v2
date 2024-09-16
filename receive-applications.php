@@ -45,7 +45,6 @@ if (strlen($errStr) > 0) {
     if (!@mail("alexeydzyuba27@gmail.com", 'Ошибка на сайте Метиды', $newEntry, "From: metida-torg.by" . "\r\n")) {
       $contents .= PHP_EOL . 'Mailing error' . PHP_EOL;
     };
-
     $contents .= '------------------------------------------';
     file_put_contents('my-php-error-log.txt', $contents, FILE_APPEND);
   }

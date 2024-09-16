@@ -71,9 +71,6 @@
       <div class="dot" data-idx="2"></div>
     </div>
     <div class="time-line"></div>
-    <svg width="1440" height="153" viewBox="0 101 1440 153" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M251.201 152.995C78.061 153.524 0 113.433 0 113.433V0l1440 102.089v23.76s-340.55-23.76-547.625 0c-207.071 23.759-424.748 26.484-641.174 27.146z" fill="#80c34e" style="opacity:1;mix-blend-mode:normal"/>
-    </svg>
   </div>
 
   <section class="about-us cont">
@@ -192,30 +189,38 @@
     <button id="stuff2-next" type="button">Next</button>
   </section>
 
-  <section class="stuff-form cont">
-    <form method="POST" enctype="multipart/form-data">
-      <label>
-        <p>Ваше имя</p>
-        <input name="name"  placeholder="Иван Иванов" maxlength="48" autocomplete="off">
-      </label>
-      <label>
-        <p>Номер телефона</p>
-        <input name="phone" type="tel"  placeholder="+375 (29) XXX-XX-XX" maxlength="48" autocomplete="off">
-      </label>
-      <label>
-        <p>Название вашей компании</p>
-        <input name="company"  placeholder="ООО «Метида-торг»" maxlength="48" autocomplete="off">
-      </label>
-      <label>
-        <p>E-mail (необязательно)</p>
-        <input name="email" placeholder="pochta@mail.ru" maxlength="48" autocomplete="off">
-      </label>
-      <label>
-        <p>Ваше сообщение</p>
-        <textarea name="msg"  placeholder="Введите текст..."></textarea>
-      </label>
-      <button type="submit">Отправить</button>
-    </form>
+  <section class="form">
+    <h2 class="cont">Мы заботимся о своих клиентах</h2>
+    <p class="cont">Мы предлагаем индивидуальные решения для каждого клиента, включая консультации<br> по выбору семян, готовых овощей и средств защиты, а также гибкие условия оплаты.</p>
+    <div class="form-dec-cont">
+      <p>Давайте двигаться к успеху вместе!</p>
+      <div class="form-flex-cont cont">
+        <b>Свяжитесь с нами</b>
+        <form method="POST" enctype="multipart/form-data" class="cont">
+          <label>
+            <p>Ваше имя</p>
+            <input name="name" required placeholder="Иван Иванов" maxlength="48" autocomplete="off">
+          </label>
+          <label>
+            <p>Номер телефона</p>
+            <input name="phone" type="tel" required placeholder="+375 (29) XXX-XX-XX" maxlength="48" autocomplete="off">
+          </label>
+          <label>
+            <p>Ваше сообщение</p>
+            <textarea name="msg" required placeholder="Введите текст..."></textarea>
+          </label>
+          <label>
+            <p>Название вашей компании</p>
+            <input name="company" required placeholder="ООО «Метида-торг»" maxlength="48" autocomplete="off">
+          </label>
+          <label>
+            <p>E-mail (необязательно)</p>
+            <input name="email" placeholder="pochta@mail.ru" maxlength="48" autocomplete="off">
+          </label>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
   </section>
 
   <div class="overlay">

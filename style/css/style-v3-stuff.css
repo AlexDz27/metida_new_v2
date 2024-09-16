@@ -2,6 +2,13 @@
 @font-face {
   font-family: Roboto;
   font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Roboto/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
@@ -137,6 +144,10 @@ a.btn-cta {
   display: inline-block;
   line-height: 57px;
   text-decoration: none;
+}
+
+section > p {
+  font-size: 20px;
 }
 
 header {
@@ -495,29 +506,98 @@ nav a:hover {
   /* margin-right: 0; */
 }
 
-.stuff-form {
+.form {
   margin-bottom: 300px;
+}
+.form > p {
+  margin-bottom: 45px;
+}
+.form-dec-cont {
+  background-image: url("../img/form-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px; /* TODO: rem */
+  color: white;
+}
+.form-dec-cont > p:first-child {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 300;
+  padding-top: 135px;
+  margin-bottom: 36px;
+}
+.form-flex-cont {
+  display: flex;
+}
+.form-flex-cont b {
+  font-size: 40px;
+  font-weight: 400;
+  width: 196px;
+  line-height: 100%;
+  letter-spacing: -1.5px;
+  margin-right: 35px;
+  position: relative;
+  top: 15px;
+}
+.form form {
+  display: grid;
+  /* TODO: test zoom */
+  grid-template-columns: 256px 254px 364px; /* было 250 250 [че-то], но не помещалось кое-че в первой колонке */
+  grid-template-rows: 83px 57px;
+  column-gap: 36px;
+  row-gap: 15px;
 }
 form label {
   font-size: 16px; /* TODO: mb 16.5 or 17 */
+  font-size: 20px;
+}
+form label > p {
+  margin-bottom: 10px;
 }
 form input {
-  font-size: 20px;
+  font-size: 16px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   outline: none;
   padding-bottom: 7px;
+  background: none;
+  color: white;
 }
-form input:active {
-  /* border: none; */
-  /* outline: none; */
+form input::placeholder {
+  color: white;
+  opacity: .6;
+  font-size: 16px;
 }
 textarea {
-  font-size: 18px;
+  font-size: 16px;
   font-family: inherit;
   resize: vertical;
   max-height: 8em;
+  min-height: 4em;
   outline: none;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
+  background: none;
+  color: white;
+  width: 100%;
+}
+form input::textarea {
+  color: white;
+  opacity: .6;
+}
+form button[type=submit] {
+  align-self: end;
+  height: 45px;
+  background: none;
+  border: 1px solid white;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 800px;
+  font-size: 16px;
+  position: relative;
+  bottom: -25px;
+  cursor: pointer;
+}
+form button[type=submit]:hover {
+  outline: 2px solid white;
 }
