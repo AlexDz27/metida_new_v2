@@ -675,7 +675,7 @@ nav a:hover {
 }
 
 .form {
-  margin-bottom: 300px;
+  margin-bottom: 150px;
 }
 .form > p {
   margin-bottom: 45px;
@@ -709,7 +709,6 @@ nav a:hover {
 }
 .form form {
   display: grid;
-  /* TODO: test zoom */
   grid-template-columns: 256px 254px 364px; /* было 250 250 [че-то], но не помещалось кое-че в первой колонке */
   grid-template-rows: 83px 57px;
   column-gap: 36px;
@@ -768,4 +767,55 @@ form button[type=submit] {
 }
 form button[type=submit]:hover {
   outline: 2px solid white;
+}
+
+.press {
+  /* TODO: change */
+  margin-bottom: 350px;
+}
+.press > p {
+  margin-bottom: 40px;
+}
+.news-item {
+  height: 186px;
+  display: grid;
+  grid-template-columns: 277px 890px;
+  column-gap: 30px;
+  margin-bottom: 45px;
+  text-decoration: none;
+}
+.news-item:last-child {
+  margin-bottom: 0;
+}
+.news-details {
+  border-top: 1px solid #525C60;
+  box-sizing: border-box;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 381px 435px;
+  column-gap: 40px;
+}
+.news-details-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.news-details-col-1 p {
+  color: black;
+  font-size: 20px;
+}
+.news-details-date {
+  font-weight: 500;
+}
+.news-details-btn-read {
+  width: 124px;
+  height: 46px;
+  border: 1px solid #80C34E;
+  border-radius: 800px;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  background: none;
+  cursor: pointer;
 }
