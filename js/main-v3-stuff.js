@@ -136,36 +136,91 @@ window.addEventListener('load', () => {
 })
 
 // Gallery
-const stuff = document.querySelector('.stuff')
-const imgs = stuff.querySelectorAll('img')
-const overlay = document.querySelector('.overlay')
-const overlayImgCont = overlay.querySelector('.overlay-img-cont')
-imgs.forEach(img => {
-  img.addEventListener('click', () => {
-    overlay.style.display = 'block'
+// const stuff = document.querySelector('.stuff')
+// const imgs = stuff.querySelectorAll('img')
+// const overlay = document.querySelector('.overlay')
+// const overlayImgCont = overlay.querySelector('.overlay-img-cont')
+// imgs.forEach(img => {
+//   img.addEventListener('click', () => {
+//     overlay.style.display = 'block'
 
-    // TODO: click on img itself shoudnt do anyt
-    const imgWidth = img.naturalWidth
-    const imgHeight = img.naturalHeight
-    const cloned = img.cloneNode()
-    overlayImgCont.style.top = `calc(50% - ${imgHeight}px / 2)`
-    overlayImgCont.style.left = `calc(50% - ${imgWidth}px / 2)`
+//     const imgWidth = img.naturalWidth
+//     const imgHeight = img.naturalHeight
+//     const cloned = img.cloneNode()
+//     overlayImgCont.style.top = `calc(50% - ${imgHeight}px / 2)`
+//     overlayImgCont.style.left = `calc(50% - ${imgWidth}px / 2)`
 
-    overlayImgCont.insertAdjacentElement('afterbegin', cloned)
+//     overlayImgCont.insertAdjacentElement('afterbegin', cloned)
+//   })
+// })
+// overlay.addEventListener('click', (e) => {
+//   if (e.target.tagName === 'IMG') return
+
+//   overlay.style.display = 'none'
+//   overlay.querySelector('img').remove()
+// })
+// document.onkeydown = (e) => {
+//   if (e.key === 'Escape') {
+//     overlay.style.display = 'none'
+//     overlay.querySelector('img').remove()
+//   }
+// }
+
+// Photogallery slider
+// (() => {
+  const photoGalleryStageReal = document.querySelector('.photogallery-cont-stage-real')
+  console.log(photoGalleryStageReal)
+  photoGalleryStageReal.style.width = document.documentElement.clientWidth + 'px'
+
+  const photoGallery = document.querySelector('.photogallery')
+  const photogalleryContTrack = photoGallery.querySelector('.photogallery-cont-stage')
+  const prevBtnP = photoGallery.querySelector('.photogallery-btn-prev')
+  const nextBtnP = photoGallery.querySelector('.photogallery-btn-next')
+  let stageSlideP = 1
+  prevBtnP.onclick = () => {
+    stageSlideP--;
+    prevBtnP.disabled = !(stageSlideP > 0)
+    nextBtnP.disabled = stageSlideP === 2
+  
+    photogalleryContTrack.style.transform = `translate3d(-${(638) * stageSlideP}px, 0, 0)`
+  }
+  nextBtnP.onclick = () => {
+    stageSlideP++;
+    prevBtnP.disabled = !(stageSlideP > 0)
+    nextBtnP.disabled = stageSlideP === 2
+  
+    stuff2Track.style.transform = `translate3d(-${(638) * stageSlideP}px, 0, 0)`
+  }
+
+  // Click and view photos
+  const imgs = photoGallery.querySelectorAll('img')
+  const overlay = document.querySelector('.overlay')
+  const overlayImgCont = overlay.querySelector('.overlay-img-cont')
+  imgs.forEach(img => {
+    img.addEventListener('click', () => {
+      overlay.style.display = 'block'
+  
+      const cloned = img.cloneNode()
+      overlayImgCont.style.top = `calc(50% - ${675}px / 2)`
+      overlayImgCont.style.left = `calc(50% - ${1100}px / 2)`
+  
+      overlayImgCont.insertAdjacentElement('afterbegin', cloned)
+      overlayImgCont.querySelector('img').style.maxWidth = '1100px'
+    })
   })
-})
-overlay.addEventListener('click', (e) => {
-  if (e.target.tagName === 'IMG') return
-
-  overlay.style.display = 'none'
-  overlay.querySelector('img').remove()
-})
-document.onkeydown = (e) => {
-  if (e.key === 'Escape') {
+  overlay.addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG') return
+  
     overlay.style.display = 'none'
     overlay.querySelector('img').remove()
+  })
+  document.onkeydown = (e) => {
+    if (e.key === 'Escape') {
+      overlay.style.display = 'none'
+      overlay.querySelector('img').remove()
+    }
   }
-}
+// })()
 
 // Slider logos
 const stuff2 = document.querySelector('.stuff-2')
