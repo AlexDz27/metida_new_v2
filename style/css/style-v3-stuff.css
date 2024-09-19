@@ -47,17 +47,20 @@ html {
 
 body {
   margin: 0;
-  /* background-color: #f7f7f7; */ /* TODO: rem */
 }
-body a {
+a {
   color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 img {
   width: 100%;
   height: auto;
 }
 h1 {
-  font-size: 64px;
+  font-size: 60px;
   color: #274C5B;
 }
 h2 {
@@ -66,10 +69,7 @@ h2 {
 }
 
 .cont {
-  /* TODO: rem */
-  /* max-width: 1320px; */ /* долнж быть лучше чем 1416, тк делится еще и на 5. Эту сетку юзает бутстрап */
-  /* max-width: 1140px; */ /* по тому, как она нарисовала, надо брать такую сетку */
-  max-width: 1200px; /* всё-таки 1200 у нее сетка */
+  max-width: 1200px; /* в Фигме сетка равна 1200px */
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -191,13 +191,6 @@ header {
 .top-menu-contacts > div .icon {
   margin-right: 8px;
 }
-/* TODO: rem */
-/* .top-menu-contacts-email {
-  font-weight: 500;
-}
-.top-menu-contacts-phone {
-  font-weight: 700;
-} */
 nav {
   height: 53px;
   box-sizing: border-box;
@@ -248,10 +241,7 @@ nav a:hover {
   transition: transform 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
   height: 413px;
 }
-/* TODO: rem? */
 .slider-track img {
-  /* flex-shrink: 0;
-  flex-basis: 100%; */
   object-fit: cover; /* вылечило сплющивание */
 }
 .slider-track video {
@@ -334,7 +324,6 @@ nav a:hover {
   grid-template-rows: 116px 134px;
   column-gap: 70px;
   row-gap: 40px;
-  /* width: 1064px; */ /* TODO: change */
 }
 .advantage {
   /* padding-top: 30px;
@@ -393,6 +382,7 @@ nav a:hover {
 }
 .products-intro-item:hover {
   border: 1px solid #80C34E;
+  text-decoration: none;
 }
 .products-intro-item:nth-child(3n) {
   margin-right: 0;
@@ -407,9 +397,6 @@ nav a:hover {
   opacity: 1;
 }
 .products-intro-item-text {
-  /* TODO: rem */
-  /* height: 95px; */
-  /* height: 162px; */
   height: 175px;
   display: flex;
   justify-content: space-evenly;
@@ -555,15 +542,9 @@ nav a:hover {
   overflow-x: hidden;
 }
 .stuff-2-track {
-  /* display: flex; */
-  /* overflow-x: hidden; */
-  /* justify-content: center; */
   display: grid;
-  /* grid-template-columns: 257px 257px 257px 257px; */
   grid-template-columns: 246px 246px 246px 246px;
-  /* column-gap: 27px; */
   column-gap: 30px;
-  /* grid-auto-columns: 257px; */
   grid-auto-columns: 246px;
   grid-auto-flow: column;
   /* for centering */
@@ -578,8 +559,6 @@ nav a:hover {
 .stuff-2-item {
   width: 246px;
   height: 136px;
-  /* background-color: yellowgreen; */
-  /* margin-right: 27px; */
   flex-shrink: 0;
   text-align: center;
   line-height: 136px;
@@ -590,18 +569,12 @@ nav a:hover {
   justify-content: center;
   align-items: center;
 }
-.stuff-2-item:last-child {
-  /* margin-right: 0; */
-}
 .stuff-2-item img {
-  /* width: 70px;
-  height: 74px; */
   width: auto;
 }
 .stuff-2-btn {
   width: 30px;
   height: 30px;
-  /* border: 2px solid #80C34E; */
   border-top: 2px solid #80C34E;
   border-left: 2px solid #80C34E;
   border-right: none;
@@ -611,7 +584,6 @@ nav a:hover {
   transform: rotate(-45deg);
   position: absolute;
   top: 65px;
-  /* TODO: text */
 }
 .stuff-2-btn:disabled {
   border-top: 2px solid #D2D2D2;
@@ -684,7 +656,6 @@ nav a:hover {
   background-image: url("../img/form-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 500px; /* TODO: rem */
   color: white;
 }
 .form-dec-cont > p:first-child {
@@ -715,7 +686,7 @@ nav a:hover {
   row-gap: 15px;
 }
 form label {
-  font-size: 16px; /* TODO: mb 16.5 or 17 */
+  font-size: 16px;
   font-size: 20px;
 }
 form label > p {
@@ -770,7 +741,6 @@ form button[type=submit]:hover {
 }
 
 .press {
-  /* TODO: change */
   margin-bottom: 150px;
 }
 .press > p {
@@ -782,6 +752,9 @@ form button[type=submit]:hover {
   grid-template-columns: 277px 890px;
   column-gap: 30px;
   margin-bottom: 45px;
+  text-decoration: none;
+}
+.news-item:hover {
   text-decoration: none;
 }
 .news-item:last-child {
@@ -826,7 +799,10 @@ form button[type=submit]:hover {
 .contacts {
   position: relative;
   overflow-x: hidden;
-
+  margin-bottom: 150px;
+}
+.contacts-block-wrap {
+  position: relative;
 }
 iframe {
   border: none;
@@ -848,7 +824,94 @@ iframe {
   width: 499px;
   height: 413px;
   background-color: white;
-  position: relative;
-  top: -600px;
+  position: absolute;
+  top: 65px;
   left: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+.wave {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 100%;
+  background: #80C34E;
+  transform: scale(1, 1);
+  /* transform: rotate(180deg); */
+}
+.wave:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  right: -25%;
+  top: 20px;
+}
+.wave:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: #80C34E;;
+  left: -25%;
+  top: -240px;
+  clip-path: ellipse(100% 15% at -15% 100%);
+}
+.contacts-block-cont {
+  box-sizing: border-box;
+  padding-top: 30px;
+  padding-left: 30px;
+  z-index: 5000;
+  position: relative;
+}
+.contacts-block-cont p {
+  position: relative;
+  padding-left: 45px;
+}
+.contacts-block-cont .contacts-block-title {
+  display: inline-block;
+  font-weight: 500;
+  color: #101C2D;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.contacts-block-cont .icon {
+  position: absolute;
+  left: 0;
+}
+
+footer {
+  display: flex;
+  margin-bottom: 85px;
+}
+
+footer .col-1 {
+  margin-right: 222px;
+}
+footer .col-2 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 174px;
+}
+footer .col-2 a {
+  margin-bottom: 10px;
+}
+footer .col-3 {
+  display: flex;
+  flex-direction: column;
+}
+footer .col-3 span {
+  margin-bottom: 10px;
+}
+footer .col-3 span:first-child {
+  font-weight: 500;
+}
+.shifted-col {
+  position: relative;
+  top: 46px;
 }
