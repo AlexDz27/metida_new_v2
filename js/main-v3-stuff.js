@@ -169,7 +169,6 @@ window.addEventListener('load', () => {
 // Photogallery slider
 // (() => {
   const photoGalleryStageReal = document.querySelector('.photogallery-cont-stage-real')
-  console.log(photoGalleryStageReal)
   photoGalleryStageReal.style.width = document.documentElement.clientWidth + 'px'
 
   const photoGallery = document.querySelector('.photogallery')
@@ -260,4 +259,10 @@ form.onsubmit = (e) => {
       submitBtn.disabled = false
       alert(r)
     })
+}
+
+// iframe
+document.querySelector('.iframe').ondblclick = () => {
+  document.querySelector('iframe').style.pointerEvents = 'auto'
+  document.querySelector('.iframe-text').style.display = 'none'
 }

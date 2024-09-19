@@ -771,7 +771,7 @@ form button[type=submit]:hover {
 
 .press {
   /* TODO: change */
-  margin-bottom: 350px;
+  margin-bottom: 150px;
 }
 .press > p {
   margin-bottom: 40px;
@@ -818,4 +818,37 @@ form button[type=submit]:hover {
   font-size: 18px;
   background: none;
   cursor: pointer;
+}
+.news-details-btn-read:hover {
+  outline: 1px solid #80C34E;
+}
+
+.contacts {
+  position: relative;
+  overflow-x: hidden;
+
+}
+iframe {
+  border: none;
+  pointer-events: none;
+}
+.iframe-text {
+  position: absolute;
+  top: 145px;
+  right: -616px;
+  color: black;
+}
+.contacts-cont {
+  position: relative;
+  /* overflow: hidden; */
+  color: red;
+}
+.contacts-block {
+  box-sizing: border-box;
+  width: 499px;
+  height: 413px;
+  background-color: white;
+  position: relative;
+  top: -600px;
+  left: 0;
 }

@@ -1,0 +1,14 @@
+html {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #525C60;
+  font-optical-sizing: auto;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+select {
+  font-size: 20px;
+}
