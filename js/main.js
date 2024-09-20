@@ -1,3 +1,23 @@
+// BURGER
+const burgerBtn = document.querySelector('.burger')
+const burgerMenu = document.querySelector('.burger-menu')
+const burgerBtnClose = burgerMenu.querySelector('.btn-close')
+burgerBtn.onclick = () => {
+  burgerMenu.classList.add('burger-menu-active')
+}
+burgerBtnClose.onclick = () => {
+  burgerMenu.classList.remove('burger-menu-active')
+}
+window.addEventListener('click', (e) => {
+  // TODO: rem when finishing
+  if (e.target.tagName === 'VIDEO') return
+
+  if (e.target === burgerBtn) return
+  if (burgerMenu.contains(e.target)) return
+
+  burgerMenu.classList.remove('burger-menu-active')
+})
+
 // SLIDER
 // load нужен чтобы slideWidth четко брался из того положения, когда видео уже реально встало как надо благодаря CSS. Иначе может быть "баг", что slideWidth берется меньший чем нужно из-за, как я понимаю, того что CSS еще не придал тегу video нужные размеры
 window.addEventListener('load', () => {
