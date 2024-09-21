@@ -390,6 +390,9 @@ nav a:hover {
 .products-intro-item:nth-child(3n) {
   margin-right: 0;
 }
+.products-intro-item:last-child {
+  margin-right: 0;
+}
 .products-intro-item:hover .products-intro-item-text {
   transform: translateY(-90px);
 }
@@ -616,8 +619,8 @@ nav a:hover {
   position: relative;
 }
 .popular-item::before {
-  content: "Популярно";
-  width: 150px;
+  content: "Сегодня покупают";
+  width: 190px;
   height: 35px;
   background-color: #F24940;
   position: absolute;

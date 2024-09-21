@@ -65,7 +65,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
   header('HTTP/1.0 401 Unauthorized');
   
   // Display a message if authentication fails
-  echo 'You must provide valid login credentials to access this page.';
+  echo 'Вы должны ввести логин и пароль, чтобы зайти на эту страницу.';
   exit;
 }
 ?>
