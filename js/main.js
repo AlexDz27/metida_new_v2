@@ -23,7 +23,7 @@ window.addEventListener('click', (e) => {
 window.addEventListener('load', () => {
   const track = document.querySelector('.slider-track')
   void document.querySelector('.slider-track video').clientWidth
-  let slideWidth = document.querySelector('.slider-track video').clientWidth
+  let slideWidth = document.documentElement.clientWidth
   const timeLine = document.querySelector('.time-line')
   const dots = document.querySelector('.dots').children
   const videos = document.querySelectorAll('.slider-track video')
