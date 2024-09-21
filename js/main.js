@@ -39,7 +39,8 @@ window.addEventListener('load', () => {
   console.debug(slideWidth)
   window.onresize = () => {
     void document.querySelector('.slider-track video').clientWidth
-    slideWidth = document.querySelector('.slider-track video').clientWidth
+    void document.documentElement.clientWidth
+    slideWidth = document.documentElement.clientWidth
     console.debug(slideWidth)
     console.debug(document.documentElement.clientWidth, 'document.documentElement.clientWidth')
     track.style.transform = `translate3d(-${document.documentElement.clientWidth * activeSlideIdx}px, 0, 0)`
