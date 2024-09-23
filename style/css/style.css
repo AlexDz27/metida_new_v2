@@ -328,34 +328,14 @@ nav a:hover {
   column-gap: 70px;
   row-gap: 40px;
 }
-@media (max-width: 1066px) {
-  .advantages {
-    grid-template-columns: 281px 281px;
-    justify-content: center;
-  }
-}
-@media (max-width: 666px) {
-  .advantages {
-    grid-template-columns: 300px;
-    justify-content: center;
-  }
-}
 .advantage {
-  /* padding-top: 30px;
-  padding-left: 30px;
-  padding-bottom: 20px;
-  padding-right: 30px;
-  box-sizing: border-box;
-  border-radius: 15px;
-  background-color: #80C34E;
-  font-size: 16px; */
-
   background-color: #80C34E;
   font-size: 16px;
   border-radius: 15px;
   padding-left: 30px;
   padding-top: 25px;
   padding-right: 20px;
+  padding-bottom: 5px;
 }
 .advantage:nth-child(3) {
   grid-row: span 2;
@@ -707,32 +687,6 @@ nav a:hover {
   column-gap: 36px;
   row-gap: 15px;
 }
-@media (max-width: 1212px) {
-  .form form {
-    grid-template-columns: 300px 300px;
-    grid-template-rows: 83px 90px 83px;
-    justify-content: center;
-  }
-  .form textarea {
-    min-height: 2em;
-  }
-  .form form button[type=submit] {
-    align-self: auto;
-    bottom: -36px;
-  }
-}
-@media (max-width: 917px) {
-  .form-flex-cont {
-    flex-direction: column;
-    align-items: center; /* TODO: подправить контейнер + mb */
-  }
-}
-@media (max-width: 680px) {
-  .form form {
-    grid-template-columns: 320px;
-    /* TODO: .form-dec-cont min-height */
-  }
-}
 form label {
   font-size: 16px;
   font-size: 20px;
@@ -795,19 +749,13 @@ form button[type=submit]:hover {
   margin-bottom: 40px;
 }
 .news-item {
-  height: 186px;
+  min-height: 186px;
   display: grid;
   /* grid-template-columns: 277px 890px; */
   grid-template-columns: 277px 381px 435px;
   column-gap: 30px;
   margin-bottom: 45px;
   text-decoration: none;
-}
-@media (max-width: 1212px) { /* TODO: not 1212px */
-  /* .news-item {
-    grid-template-rows: 1fr 1fr;
-    grid-template-rows: 500px 400px;
-  } */
 }
 .news-item:hover {
   text-decoration: none;
@@ -825,7 +773,7 @@ form button[type=submit]:hover {
   column-gap: 40px; */
 }
 .news-details-col {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
@@ -869,6 +817,9 @@ iframe {
   top: 145px;
   right: -616px;
   color: black;
+}
+.iframe-text-br {
+  display: none;
 }
 .contacts-cont {
   position: relative;
@@ -945,7 +896,6 @@ footer {
   display: flex;
   margin-bottom: 85px;
 }
-
 footer .col-1 {
   margin-right: 222px;
 }
@@ -1139,11 +1089,21 @@ footer .col-3 span:first-child {
   .why-us {
     margin-bottom: 75px;
   }
-
   .advantages {
     /* TODO:  */
-    /* grid-template-columns: 370px 370px;
-    grid-template-rows: 116px 134px 290px; */
+    grid-template-columns: 370px 370px;
+    grid-template-rows: 116px 134px 116px;
+  }
+}
+@media (max-width: 855px) {
+  .decorative-bg {
+    padding-top: 55px;
+    padding-bottom: 85px;
+  }
+  .advantages {
+    /* TODO:  */
+    grid-template-columns: 335px;
+    justify-content: center;
   }
 }
 
@@ -1153,9 +1113,22 @@ footer .col-3 span:first-child {
     margin-right: 41px;
   }
 }
+@media (max-width: 1224px) {
+  .products-intro-item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
 @media (max-width: 1066px) {
   .products-intro {
     margin-bottom: 75px;
+  }
+}
+@media (max-width: 806px) {
+  .products-intro-item:nth-child(2n) {
+    margin-right: 41px;
+  }
+  .products-intro-item:last-child {
+    margin-right: 41px;
   }
 }
 
@@ -1164,4 +1137,161 @@ footer .col-3 span:first-child {
   .photogallery {
     margin-bottom: 75px;
   }
+}
+
+/* Suppliers */
+@media (max-width: 1195px) {
+  .stuff-2-track {
+    grid-template-columns: 33% 33% 33%;
+    grid-auto-columns: 33%;
+  }
+}
+
+/* Popular */
+@media (max-width: 1224px) {
+  .popular {
+    margin-bottom: 75px;
+  }
+  .popular-item:nth-child(2n) {
+    margin-right: 28px;
+  }
+  .popular-item:nth-child(3n) {
+    margin-right: 28px;
+  }
+}
+
+/* Form */
+@media (max-width: 1212px) {
+  .form form {
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 83px 90px 83px;
+    justify-content: center;
+  }
+  .form textarea {
+    min-height: 2em;
+  }
+  .form form button[type=submit] {
+    align-self: auto;
+    bottom: -36px;
+  }
+}
+@media (max-width: 917px) {
+  .form-flex-cont {
+    flex-direction: column;
+    align-items: center; /* TODO: подправить контейнер */
+  }
+  .form-flex-cont b {
+    width: 345px;
+  }
+}
+@media (max-width: 916px) {
+  .form {
+    margin-bottom: 75px;
+  }
+  .form-dec-cont > p:first-child {
+    margin-bottom: 15px;
+    line-height: 90%;
+  }
+  .form-flex-cont b {
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+  .form-dec-cont {
+    min-height: 580px;
+  }
+}
+@media (max-width: 680px) {
+  .form-dec-cont {
+    min-height: 875px;
+  }
+  .form form {
+    grid-template-columns: 320px;
+  }
+}
+@media (max-width: 530px) {
+  .form-dec-cont {
+    min-height: 900px;
+  }
+}
+
+/* News */
+@media (max-width: 1152px) {
+  .press {
+    margin-bottom: 75px;
+  }
+  .news-item {
+    justify-content: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 500px 400px;
+
+    grid-template-columns: 360px 360px;
+    grid-template-rows: 232px 200px;
+  }
+  .news-details-col-2 {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 810px) {
+  .news-item {
+    grid-template-columns: 360px;
+    grid-template-rows: 236px;
+  }
+  .news-details-col-2 {
+    grid-column: auto;
+  }
+}
+
+/* Contacts */
+@media (max-width: 1211px) {
+  .contacts-block {
+    left: 1%;
+  }
+}
+@media (max-width: 1192px) {
+  .iframe-text-br {
+    display: inline;
+  }
+}
+@media (max-width: 1152px) {
+  .contacts {
+    margin-bottom: 75px;
+  }
+}
+@media (max-width: 896px) {
+  .iframe-text {
+    display: none;
+  }
+}
+@media (max-width: 512px) {
+  .contacts-block {
+    overflow-y: hidden;
+    width: auto;
+    max-width: 499px;
+    height: 434px;
+  }
+}
+
+/* Footer */
+@media (max-width: 995px) {
+  footer {
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  footer img {
+    /* height: 100px; */
+    flex: 0 0 100%;
+    max-width: 200px;
+    height: auto;
+  }
+  footer .col-1 {
+    margin-right: 0;
+  }
+  footer .col-2 {
+    margin-right: 160px;
+    margin-left: 160px;
+    margin-bottom: 30px;
+  }
+  /* TODO: для картинки: max-width: 200px; height: auto; */
 }

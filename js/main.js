@@ -207,6 +207,7 @@ document.onkeydown = (e) => {
 // Slider logos
 const stuff2 = document.querySelector('.stuff-2')
 const stuff2Track = stuff2.querySelector('.stuff-2-track')
+const stuff2TrackWidth = stuff2.querySelector('.stuff-2-track').clientWidth
 const prevBtn = stuff2.querySelector('#stuff2-prev')
 const nextBtn = stuff2.querySelector('#stuff2-next')
 let stageSlide = 0
@@ -215,14 +216,14 @@ prevBtn.onclick = () => {
   prevBtn.disabled = !(stageSlide > 0)
   nextBtn.disabled = stageSlide === 2
 
-  stuff2Track.style.transform = `translate3d(-${(1104) * stageSlide}px, 0, 0)`
+  stuff2Track.style.transform = `translate3d(-${(stuff2TrackWidth) * stageSlide}px, 0, 0)`
 }
 nextBtn.onclick = () => {
   stageSlide++;
   prevBtn.disabled = !(stageSlide > 0)
   nextBtn.disabled = stageSlide === 2
 
-  stuff2Track.style.transform = `translate3d(-${(1104) * stageSlide}px, 0, 0)`
+  stuff2Track.style.transform = `translate3d(-${(stuff2TrackWidth) * stageSlide}px, 0, 0)`
 }
 
 // Form
