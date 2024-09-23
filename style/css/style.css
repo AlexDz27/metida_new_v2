@@ -328,6 +328,18 @@ nav a:hover {
   column-gap: 70px;
   row-gap: 40px;
 }
+@media (max-width: 1066px) {
+  .advantages {
+    grid-template-columns: 281px 281px;
+    justify-content: center;
+  }
+}
+@media (max-width: 666px) {
+  .advantages {
+    grid-template-columns: 300px;
+    justify-content: center;
+  }
+}
 .advantage {
   /* padding-top: 30px;
   padding-left: 30px;
@@ -695,6 +707,32 @@ nav a:hover {
   column-gap: 36px;
   row-gap: 15px;
 }
+@media (max-width: 1212px) {
+  .form form {
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 83px 90px 83px;
+    justify-content: center;
+  }
+  .form textarea {
+    min-height: 2em;
+  }
+  .form form button[type=submit] {
+    align-self: auto;
+    bottom: -36px;
+  }
+}
+@media (max-width: 917px) {
+  .form-flex-cont {
+    flex-direction: column;
+    align-items: center; /* TODO: подправить контейнер + mb */
+  }
+}
+@media (max-width: 680px) {
+  .form form {
+    grid-template-columns: 320px;
+    /* TODO: .form-dec-cont min-height */
+  }
+}
 form label {
   font-size: 16px;
   font-size: 20px;
@@ -759,10 +797,17 @@ form button[type=submit]:hover {
 .news-item {
   height: 186px;
   display: grid;
-  grid-template-columns: 277px 890px;
+  /* grid-template-columns: 277px 890px; */
+  grid-template-columns: 277px 381px 435px;
   column-gap: 30px;
   margin-bottom: 45px;
   text-decoration: none;
+}
+@media (max-width: 1212px) { /* TODO: not 1212px */
+  /* .news-item {
+    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 500px 400px;
+  } */
 }
 .news-item:hover {
   text-decoration: none;
@@ -774,9 +819,10 @@ form button[type=submit]:hover {
   border-top: 1px solid #525C60;
   box-sizing: border-box;
   padding-top: 20px;
-  display: grid;
+  /* TODO: rem */
+  /* display: grid;
   grid-template-columns: 381px 435px;
-  column-gap: 40px;
+  column-gap: 40px; */
 }
 .news-details-col {
   display: flex;
