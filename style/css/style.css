@@ -767,10 +767,6 @@ form button[type=submit]:hover {
   border-top: 1px solid #525C60;
   box-sizing: border-box;
   padding-top: 20px;
-  /* TODO: rem */
-  /* display: grid;
-  grid-template-columns: 381px 435px;
-  column-gap: 40px; */
 }
 .news-details-col {
   /* display: flex; */
@@ -948,7 +944,6 @@ footer .col-3 span:first-child {
   position: fixed;
   width: 100%;
   top: 0;
-  /* TODO: rem) */
   min-height: 300px;
   background-color: white;
   box-sizing: border-box;
@@ -1030,7 +1025,6 @@ footer .col-3 span:first-child {
   }
 }
 @media (max-width: 806px) {
-  /* TODO: rem? */
   .top-menu {
     justify-content: space-around;
     margin-bottom: 15px;
@@ -1090,7 +1084,6 @@ footer .col-3 span:first-child {
     margin-bottom: 75px;
   }
   .advantages {
-    /* TODO:  */
     grid-template-columns: 370px 370px;
     grid-template-rows: 116px 134px 116px;
   }
@@ -1101,7 +1094,6 @@ footer .col-3 span:first-child {
     padding-bottom: 85px;
   }
   .advantages {
-    /* TODO:  */
     grid-template-columns: 335px;
     justify-content: center;
   }
@@ -1178,7 +1170,7 @@ footer .col-3 span:first-child {
 @media (max-width: 917px) {
   .form-flex-cont {
     flex-direction: column;
-    align-items: center; /* TODO: подправить контейнер */
+    align-items: center;
   }
   .form-flex-cont b {
     width: 345px;
@@ -1293,5 +1285,4 @@ footer .col-3 span:first-child {
     margin-left: 160px;
     margin-bottom: 30px;
   }
-  /* TODO: для картинки: max-width: 200px; height: auto; */
 }
