@@ -4,10 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>МЕТИДА-ТОРГ — ???</title> <!-- TODO: что тут? -->
-  <link rel="stylesheet" href="style/css/style.css">
+  <link rel="stylesheet" href="style/css/style-sasha.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20240930171805">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805" defer></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805" defer></script>
+  <script src="js/magnific.min.js" defer></script>
+  <!-- <script src="js/app.min.js" defer></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <section class="popup" data-popup="1">
+    <form class="popup__inner">
+        <div class="popup__close">
+            <img id="popupClose" src="style/img/close.svg" alt="">
+        </div>
+        <h2 class="popup__title">Оставьте заявку</h2>
+        <p class="popup__subtitle">
+            Заполните форму и мы свяжемся с вами в ближайшее время
+        </p>
+        <div class="popup__inputs">
+            <label for="" class="popup__label">Ваше имя</label>
+            <input class="popup__input" type="text" placeholder="Иван Иванов" required>
+            <label for="" class="popup__label">Номер телефона</label>
+            <input class="popup__input" type="text" placeholder="+375 (29) XXX–XX–XX" data-tel-by-input required>
+            <label for="" class="popup__label">Email (необязательно)</label>
+            <input class="popup__input" type="text" placeholder="pochta@mail.by">
+            <label for="" class="popup__label">Название вашей организации</label>
+            <input class="popup__input" type="text" placeholder="ООО «Метида-торг»">
+            <label for="" class="popup__label">Ваше сообщение</label>
+            <textarea class="popup__input" rows="3" placeholder="Хочу закупить кукурузу. Свяжитесь со мной и сделайте коммерческое предложение…"></textarea>
+            <label class="popup__confirm">
+                <input type="checkbox">
+                Согласен на обработку персональных данных
+            </label>
+        </div>
+        <button type="submit" class="btn-cta popup__btn">Отправить</button>
+    </form>
+  </section>
+
+  <section class="popup spasibo" data-popup="2">
+    <form class="popup__inner">
+        <div class="popup__cover">
+            <img src="style/img/spasibo.jpg" alt="">
+        </div>
+        <h2 class="popup__title">Спасибо за обращение!</h2>
+        <p class="popup__subtitle">
+            Наши специалисты свяжутся с вами в ближайшее время
+        </p>
+        <button type="button" class="btn-cta popup__btn" data-popup-close>закрыть</button>
+    </form>
+  </section>
+
   <header>
     <section class="top-menu cont">
       <img src="style/img/logo.png">
@@ -31,7 +79,7 @@
           <span class="top-menu-contacts-phone">+375 (17) 502 - 34 - 47</span>
         </div>
       </div>
-      <button class="btn-cta btn-cta-with-glow" type="button">Оставить заявку</button>
+      <button id="ost-zayav" class="btn-cta btn-cta-with-glow" type="button">Оставить заявку</button>
       <button class="burger" type="button"></button>
     </section>
     <nav>
@@ -42,15 +90,40 @@
     </nav>
   </header>
 
-  <section class="greeting cont">
-    <h1>Семена, которые растят успех!</h1>
-    <div class="greeting-row">
-      <p>Мы предлагаем оптовые поставки высококачественных полевых и овощных семян пшеницы, ржи и кукурузы,<br> а также средства защиты растений.</p>
-      <a href="javascript:void(0)" class="btn-cta btn-cta-with-glow">Наша продукция</a>
+  <section class="greeting cont section">
+    <div class="greeting-left">
+      <h1>Семена, которые растят успех!</h1>
+      <div class="greeting-row section__subtitle">
+        <p>Мы предлагаем оптовые поставки высококачественных полевых и овощных семян пшеницы, ржи и кукурузы,<br> а также средства защиты растений.</p>
+        <a href="javascript:void(0)" class="btn-cta btn-cta-with-glow">Наша продукция</a>
+      </div>
+    </div>
+    <div class="greeting-slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="greeting-slider-title">Морковь «ЛЯВОНИХА»</div>
+            <div class="greeting-slider-img">
+              <img src="style/img/greeting-slide.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="greeting-slider-title">Морковь «ЛЯВОНИХА»</div>
+            <div class="greeting-slider-img">
+              <img src="style/img/greeting-slide.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="greeting-slider-title">Морковь «ЛЯВОНИХА»</div>
+            <div class="greeting-slider-img">
+              <img src="style/img/greeting-slide.png" alt="">
+            </div>
+        </div>
+      </div>
+      <div class="greeting-slider-pagination"></div>
     </div>
   </section>
 
-  <div class="slider">
+  <div class="slider section">
     <div class="slider-track">
       <video autoplay muted playsinline loop title="Остановить видео">
         <source src="style/videos/first-slide-cut-rr.mp4" type="video/mp4">
@@ -73,7 +146,7 @@
     <div class="time-line"></div>
   </div>
 
-  <section class="about-us cont">
+  <section class="about-us cont section">
     <img src="style/img/about-us.png">
     <div class="about-us-col-2">
       <h2>Расскажем о себе</h2>
@@ -84,7 +157,7 @@
     </div>
   </section>
 
-  <section class="why-us">
+  <section class="why-us section">
     <h2 class="cont">Почему выбирают нас</h1>
     <div class="decorative-bg">
       <div class="cont">
@@ -116,9 +189,9 @@
     </div>
   </section>
 
-  <section class="products-intro cont">
+  <section class="products-intro cont section">
     <h2>Мы предлагаем вам следующую продукцию</h2>
-    <p>Lorem ipsum dolor sit amet consectetur. Molestie diam montes in cras ac. Purus quis quam id lacus consectetur hendrerit in ut. Facilisis ultricies consectetur massa commodo aliquam sed eu eget pharetra. Neque integer diam egestas libero nibh adipiscing tortor.</p>
+    <p class="section__subtitle">Lorem ipsum dolor sit amet consectetur. Molestie diam montes in cras ac. Purus quis quam id lacus consectetur hendrerit in ut. Facilisis ultricies consectetur massa commodo aliquam sed eu eget pharetra. Neque integer diam egestas libero nibh adipiscing tortor.</p>
     <div class="products-intro-items">
       <a href="javascript:void(0)" class="products-intro-item">
         <img src="style/img/pol-kult.png">
@@ -151,21 +224,29 @@
     </div>
   </section>
 
-  <section class="photogallery">
+  <section class="photogallery section">
     <h2 class="cont">Вот уже много лет мы трудимся для вас</h2>
-    <p class="cont">Lorem ipsum dolor sit amet consectetur. Molestie diam montes in cras ac. Purus quis quam id lacus consectetur hendrerit in ut. Facilisis ultricies consectetur massa commodo aliquam sed eu eget pharetra. Neque integer diam egestas libero nibh adipiscing tortor.</p>
+    <p class="cont section__subtitle">Lorem ipsum dolor sit amet consectetur. Molestie diam montes in cras ac. Purus quis quam id lacus consectetur hendrerit in ut. Facilisis ultricies consectetur massa commodo aliquam sed eu eget pharetra. Neque integer diam egestas libero nibh adipiscing tortor.</p>
 
     <div class="photogallery-cont">
       <div class="photogallery-cont-stage-real">
-        <div class="photogallery-cont-stage">
-          <div class="img-cont">
-            <img src="style/img/ph-left-f.jpg">
-          </div>
-          <div class="img-cont">
-            <img src="style/img/zhen.jpg">
-          </div>
-          <div class="img-cont">
-            <img src="style/img/ph-right-f.jpg">
+        <div class="photogallery-cont-stage swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a class="img-cont" href="style/img/ph-left-f.jpg">
+                <img src="style/img/ph-left-f.jpg">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="img-cont" href="style/img/zhen.jpg">
+                <img src="style/img/zhen.jpg">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="img-cont" href="style/img/ph-right-f.jpg">
+                <img src="style/img/ph-right-f.jpg">
+              </a>
+            </div>
           </div>
         </div>
       </div> 
@@ -185,42 +266,62 @@
     </div>
   </section>
 
-  <section class="suppliers cont">
+  <section class="suppliers cont section">
     <h2>Наши поставщики самые надёжные</h2>
-    <p><b>(Тут можно рассказать, что поставщики из многих стран Европы и т.д, перечислить страны). Как вариант.</b> Lorem ipsum dolor sit amet consectetur. Molestie diam montes in cras ac. Purus quis quam id lacus consectetur hendrerit in ut.</p>
+    <p class="section__subtitle"><b>(Тут можно рассказать, что поставщики из многих стран Европы и т.д, перечислить страны). Как вариант.</b> Lorem ipsum dolor sit amet consectetur. Molestie diam montes in cras ac. Purus quis quam id lacus consectetur hendrerit in ut.</p>
 
     <section class="stuff-2 cont">
-      <div class="stuff-2-stage">
-        <div class="stuff-2-track">
-          <div class="stuff-2-item">
-            <img src="style/img/yara-colored.png">
+      <div class="stuff-2-stage swiper">
+        <div class="stuff-2-track swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/yara-colored.png">
+            </div>
           </div>
-          <div class="stuff-2-item">
-            <img src="style/img/logo-speland.png">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/logo-speland.png">
+            </div>
           </div>
-          <div class="stuff-2-item">
-            <img src="style/img/logo-ural.png">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/logo-ural.png">
+            </div>
           </div>
-          <div class="stuff-2-item">
-            <img src="style/img/logo-grodno.png">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/logo-grodno.png">
+            </div>
           </div>
-          <div class="stuff-2-item">
-            <img src="style/img/yara-colored.png">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/yara-colored.png">
+            </div>
           </div>
-          <div class="stuff-2-item">
-            <img src="style/img/logo-speland.png">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/logo-speland.png">
+            </div>
           </div>
-          <div class="stuff-2-item">
-            <img src="style/img/logo-ural.png">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/logo-ural.png">
+            </div>
           </div>
-          <div class="stuff-2-item">
-            <img src="style/img/logo-grodno.png">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/logo-grodno.png">
+            </div>
           </div>
-          <div class="stuff-2-item">
-            <img src="style/img/yara-colored.png">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/yara-colored.png">
+            </div>
           </div>
-          <div class="stuff-2-item">
-            <img src="style/img/logo-speland.png">
+          <div class="swiper-slide">
+            <div class="stuff-2-item">
+              <img src="style/img/logo-speland.png">
+            </div>
           </div>
         </div>
       </div>
@@ -229,8 +330,8 @@
     </section>
   </section>
 
-  <section class="popular cont">
-    <h2>Сейчас покупают</h2>
+  <section class="popular cont section">
+    <h2 class="section__title">Сейчас покупают</h2>
     <div class="popular-cont">
       <a href="javascript:void(0)" class="popular-item products-intro-item">
         <img src="style/img/pop-kuk.png">
@@ -267,9 +368,9 @@
     </div>
   </section>
 
-  <section class="form">
+  <section class="form section">
     <h2 class="cont">Мы заботимся о своих клиентах</h2>
-    <p class="cont">Мы предлагаем индивидуальные решения для каждого клиента, включая консультации<br> по выбору семян, готовых овощей и средств защиты, а также гибкие условия оплаты.</p>
+    <p class="cont section__subtitle">Мы предлагаем индивидуальные решения для каждого клиента, включая консультации<br> по выбору семян, готовых овощей и средств защиты, а также гибкие условия оплаты.</p>
     <div class="form-dec-cont">
       <p>Давайте двигаться к успеху вместе!</p>
       <div class="form-flex-cont cont">
@@ -303,7 +404,7 @@
 
   <section class="press cont">
     <h2>Пресс-центр</h2>
-    <p>Lorem ipsum dolor sit amet consectetur. Sollicitudin neque molestie netus eget mattis lacus augue. Tortor sit posuere pellentesque praesent enim erat tincidunt.</p>
+    <p class="section__subtitle">Lorem ipsum dolor sit amet consectetur. Sollicitudin neque molestie netus eget mattis lacus augue. Tortor sit posuere pellentesque praesent enim erat tincidunt.</p>
     <a href="javascript:void(0)" class="news-item">
       <img src="style/img/news-1.png">
       <div class="news-details-col news-details-col-1">
@@ -340,7 +441,7 @@
   </section>
 
   <section class="contacts">
-    <h2 class="cont">Контактная информация</h2>
+    <h2 class="cont section__title">Контактная информация</h2>
     <div class="contacts-block-wrap cont">
       <div class="contacts-block">
         <div class="wave"></div>
