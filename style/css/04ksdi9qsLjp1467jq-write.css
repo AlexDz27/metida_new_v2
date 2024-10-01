@@ -1,0 +1,60 @@
+/** FONTS **/
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/Roboto-Black.ttf") format("truetype");
+}
+
+html {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 18px;
+  color: #525C60;
+  line-height: 21.6px;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  /* TODO: add overflow-x: hidden when finishing  */
+}
+
+h1 {
+  /* TODO: сделать так, чтобы стили были такие же, как и на настоящем посте) */
+  /* font-size: 36px; */
+}
+
+button {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 18px;
+  display: block;
+  width: 66%;
+  margin-left: auto;
+  margin-right: auto;
+}
