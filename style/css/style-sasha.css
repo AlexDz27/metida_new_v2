@@ -2315,8 +2315,13 @@ footer .col-3 span:first-child {
 .catalog__product {
   flex: 0 0 calc(33.33% - 20px);
 }
-.catalog__product:first-child img {
+.catalog__product-nitrat img {
   object-position: center top;
+}
+.catalog__product-supra img {
+  object-fit: contain !important;
+  position: relative;
+  top: 10px;
 }
 @media screen and (max-width: 991.98px) {
   .catalog__product {

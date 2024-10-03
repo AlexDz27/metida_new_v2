@@ -1,3 +1,8 @@
+<?php
+
+$curCat = $_GET['cat'];
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -159,7 +164,7 @@
         <div class="breadcrumbs__arrow">
             <img src="style/img/breadcrumbs-arrow.svg" alt="">
         </div>
-        <a href="#" class="breadcrumbs__item">Каталог</a>
+        <a href="javascript:void(0)" class="breadcrumbs__item">Каталог</a>
 
     </section>
 
@@ -176,30 +181,69 @@
     <h1 class="section__title">Каталог</h1>
 
     <div class="catalog">
-        <!-- <aside class="catalog__sidebar catalog-sidebar">
-            <a href="javascript:void(0)" class="catalog-sidebar__item catalog-sidebar__item_active">Гербициды</a>
-            <a href="javascript:void(0)" class="catalog-sidebar__item">Фунгициды</a>
-        </aside> -->
+      <!-- TODO: подумать с undefined -->
+        <?php if ($_GET['cat'] === 'svezhie-ovoshi-i-frukty'): ?>
+          <aside class="catalog__sidebar catalog-sidebar">
+              <a href="javascript:void(0)" class="catalog-sidebar__item catalog-sidebar__item_active">Все</a>
+              <a href="javascript:void(0)" class="catalog-sidebar__item">Тепличные овощи</a>
+              <a href="javascript:void(0)" class="catalog-sidebar__item">Овощи защищённого грунта</a>
+              <a href="javascript:void(0)" class="catalog-sidebar__item">Фрукты</a>
+          </aside>
+        <?php elseif ($_GET['cat'] === 'udobreniya'): ?>
+          <aside class="catalog__sidebar catalog-sidebar">
+              <a href="javascript:void(0)" class="catalog-sidebar__item catalog-sidebar__item_active">Все</a>
+          </aside>
+        <?php elseif ($_GET['cat'] === 'szr'): ?>
+          <aside class="catalog__sidebar catalog-sidebar">
+              <a href="javascript:void(0)" class="catalog-sidebar__item catalog-sidebar__item_active">Все</a>
+              <a href="javascript:void(0)" class="catalog-sidebar__item">Гербициды</a>
+              <a href="javascript:void(0)" class="catalog-sidebar__item">Фунгициды</a>
+          </aside>
+        <?php endif; ?>  
         <div class="catalog__body">
             <div class="catalog__cats">
                 <a href="javascript:void(0)" class="catalog__cat">Семена</a>
-                <a href="javascript:void(0)" class="catalog__cat">Овощи</a>
-                <a href="javascript:void(0)" class="catalog__cat catalog__cat_active">Удобрения</a>
-                <a href="javascript:void(0)" class="catalog__cat">Средства защиты растений</a>
+                <a href="/catalog.php?cat=svezhie-ovoshi-i-frukty" class="catalog__cat <?php if ($curCat === 'svezhie-ovoshi-i-frukty'): ?>catalog__cat_active<?php endif; ?>">Свежие овощи и фрукты</a>
+                <a href="/catalog.php?cat=udobreniya" class="catalog__cat <?php if ($curCat === 'udobreniya'): ?>catalog__cat_active<?php endif; ?>">Удобрения</a>
+                <a href="/catalog.php?cat=szr" class="catalog__cat <?php if ($curCat === 'szr'): ?>catalog__cat_active<?php endif; ?>">Средства защиты растений</a>
             </div>
             <div class="catalog__products">
-                <div class="catalog__product product-card">
+            <?php if ($_GET['cat'] === 'svezhie-ovoshi-i-frukty'): ?>
+              <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/kalc.png" alt="">
+                        <img src="img/og-sr.jpg" alt="">
                     </div>
                     <div class="product-card__content">
-                        <h3 class="product-card__title">Нитрат кальция</h3>
+                        <h3 class="product-card__title">Огурец среднеплодный</h3>
                         <div class="product-card__btns">
-                            <a href="product-with-gallery.html" class="btn-outline">Подробнее </a>
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>
                 <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="img/apples-resized.jpg" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Яблоко</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+            <?php elseif ($_GET['cat'] === 'udobreniya'): ?>
+              <div class="catalog__product product-card catalog__product-nitrat">
+                  <div class="product-card__img">
+                      <img src="img/kalc.png" alt="">
+                  </div>
+                  <div class="product-card__content">
+                      <h3 class="product-card__title">Нитрат кальция</h3>
+                      <div class="product-card__btns">
+                          <a href="product-with-gallery.html" class="btn-outline">Подробнее </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="img/mono.jpg" alt="">
                     </div>
@@ -221,6 +265,30 @@
                         </div>
                     </div>
                 </div>
+            <?php elseif ($_GET['cat'] === 'szr'): ?>
+              <div class="catalog__product product-card catalog__product-supra">
+                    <div class="product-card__img">
+                        <img src="img/supra.jpg" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Супра</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="img/chugur-sk.jpg" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Чугур</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?> 
             </div>
         </div>
     </div>
