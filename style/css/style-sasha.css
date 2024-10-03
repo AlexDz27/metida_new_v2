@@ -553,6 +553,10 @@ header {
   align-items: center;
 }
 
+.logo-link {
+  display: flex;
+}
+
 .top-menu img {
   width: auto;
 }
