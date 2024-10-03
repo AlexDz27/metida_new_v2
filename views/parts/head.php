@@ -86,7 +86,7 @@
       </section>
       <nav>
         <a href="/about">О нас</a>
-        <a href="/catalog.php?cat=udobreniya">Продукция</a>
+        <a href="/katalog/udobreniya">Продукция</a>
         <a href="/news">Новости</a>
         <a href="/contacts">Контакты</a>
       </nav>

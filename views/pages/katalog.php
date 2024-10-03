@@ -1,9 +1,6 @@
 <?php
-
-$curCat = $_GET['cat'];
-
+$curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
 ?>
-
 <div class="breadcrumbs-wrapper container">
 
     <section class="breadcrumbs">
@@ -32,18 +29,18 @@ $curCat = $_GET['cat'];
 
     <div class="catalog">
       <!-- TODO: подумать с undefined -->
-        <?php if ($_GET['cat'] === 'svezhie-ovoshi-i-frukty'): ?>
+        <?php if ($curCat === 'svezhie-ovoshi-i-frukty'): ?>
           <aside class="catalog__sidebar catalog-sidebar">
               <a href="javascript:void(0)" class="catalog-sidebar__item catalog-sidebar__item_active">Все</a>
               <a href="javascript:void(0)" class="catalog-sidebar__item">Тепличные овощи</a>
               <a href="javascript:void(0)" class="catalog-sidebar__item">Овощи защищённого грунта</a>
               <a href="javascript:void(0)" class="catalog-sidebar__item">Фрукты</a>
           </aside>
-        <?php elseif ($_GET['cat'] === 'udobreniya'): ?>
+        <?php elseif ($curCat === 'udobreniya'): ?>
           <aside class="catalog__sidebar catalog-sidebar">
               <a href="javascript:void(0)" class="catalog-sidebar__item catalog-sidebar__item_active">Все</a>
           </aside>
-        <?php elseif ($_GET['cat'] === 'szr'): ?>
+        <?php elseif ($curCat === 'szr'): ?>
           <aside class="catalog__sidebar catalog-sidebar">
               <a href="javascript:void(0)" class="catalog-sidebar__item catalog-sidebar__item_active">Все</a>
               <a href="javascript:void(0)" class="catalog-sidebar__item">Гербициды</a>
@@ -53,15 +50,15 @@ $curCat = $_GET['cat'];
         <div class="catalog__body">
             <div class="catalog__cats">
                 <a href="javascript:void(0)" class="catalog__cat">Семена</a>
-                <a href="/katalog?cat=svezhie-ovoshi-i-frukty" class="catalog__cat <?php if ($curCat === 'svezhie-ovoshi-i-frukty'): ?>catalog__cat_active<?php endif; ?>">Свежие овощи и фрукты</a>
-                <a href="/katalog?cat=udobreniya" class="catalog__cat <?php if ($curCat === 'udobreniya'): ?>catalog__cat_active<?php endif; ?>">Удобрения</a>
-                <a href="/katalog?cat=szr" class="catalog__cat <?php if ($curCat === 'szr'): ?>catalog__cat_active<?php endif; ?>">Средства защиты растений</a>
+                <a href="/katalog/svezhie-ovoshi-i-frukty" class="catalog__cat <?php if ($curCat === 'svezhie-ovoshi-i-frukty'): ?>catalog__cat_active<?php endif; ?>">Свежие овощи и фрукты</a>
+                <a href="/katalog/udobreniya" class="catalog__cat <?php if ($curCat === 'udobreniya'): ?>catalog__cat_active<?php endif; ?>">Удобрения</a>
+                <a href="/katalog/szr" class="catalog__cat <?php if ($curCat === 'szr'): ?>catalog__cat_active<?php endif; ?>">Средства защиты растений</a>
             </div>
             <div class="catalog__products">
-            <?php if ($_GET['cat'] === 'svezhie-ovoshi-i-frukty'): ?>
+            <?php if ($curCat === 'svezhie-ovoshi-i-frukty'): ?>
               <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/og-sr.jpg" alt="">
+                        <img src="/img/katalog/svezhie-ovoshi-i-frukty/og-sr.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Огурец среднеплодный</h3>
@@ -72,7 +69,7 @@ $curCat = $_GET['cat'];
                 </div>
                 <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/apples-resized.jpg" alt="">
+                        <img src="/img/katalog/svezhie-ovoshi-i-frukty/apples-resized.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Яблоко</h3>
@@ -81,7 +78,7 @@ $curCat = $_GET['cat'];
                         </div>
                     </div>
                 </div>
-            <?php elseif ($_GET['cat'] === 'udobreniya'): ?>
+            <?php elseif ($curCat === 'udobreniya'): ?>
               <div class="catalog__product product-card catalog__product-nitrat">
                   <div class="product-card__img">
                       <img src="/img/katalog/udobreniya/kalc.png" alt="">
@@ -95,7 +92,7 @@ $curCat = $_GET['cat'];
               </div>
               <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/mono.jpg" alt="">
+                        <img src="/img/katalog/udobreniya/mono.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Монокалийфосфат</h3>
@@ -106,7 +103,7 @@ $curCat = $_GET['cat'];
                 </div>
                 <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/sulf.jpg" alt="">
+                        <img src="/img/katalog/udobreniya/sulf.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Сульфат калия</h3>
@@ -115,10 +112,10 @@ $curCat = $_GET['cat'];
                         </div>
                     </div>
                 </div>
-            <?php elseif ($_GET['cat'] === 'szr'): ?>
+            <?php elseif ($curCat === 'szr'): ?>
               <div class="catalog__product product-card catalog__product-supra">
                     <div class="product-card__img">
-                        <img src="img/katalog/szr/supra.jpg" alt="">
+                        <img src="/img/katalog/szr/supra.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Супра, СЭ</h3>
@@ -129,7 +126,7 @@ $curCat = $_GET['cat'];
                 </div>
                 <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/chugur-sk.jpg" alt="">
+                        <img src="/img/katalog/szr/chugur-sk.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Чугур, СК</h3>
@@ -140,7 +137,7 @@ $curCat = $_GET['cat'];
                 </div>
                 <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/kunicza-ks.jpg" alt="">
+                        <img src="/img/katalog/szr/kunicza-ks.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Куница, КС</h3>
@@ -151,7 +148,7 @@ $curCat = $_GET['cat'];
                 </div>
                 <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/metatron-ks.jpg" alt="">
+                        <img src="/img/katalog/szr/metatron-ks.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Метатрон, КС</h3>
@@ -162,7 +159,7 @@ $curCat = $_GET['cat'];
                 </div>
                 <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/groza-vr.jpg" alt="">
+                        <img src="/img/katalog/szr/groza-vr.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Гроза, ВР</h3>
@@ -173,7 +170,18 @@ $curCat = $_GET['cat'];
                 </div>
                 <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/gerbisan-se.jpg" alt="">
+                        <img src="/img/katalog/szr/groza-ultra-vr.jpg" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Гроза Ультра, ВР</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="/img/katalog/szr/gerbisan-se.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Гербисан, СЭ</h3>
@@ -184,21 +192,10 @@ $curCat = $_GET['cat'];
                 </div>
                 <div class="catalog__product product-card">
                     <div class="product-card__img">
-                        <img src="img/bretiskan-big__jpg.jpg" alt="">
+                        <img src="/img/katalog/szr/bretiskan-big__jpg.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Бетрисан, КЭ</h3>
-                        <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="catalog__product product-card">
-                    <div class="product-card__img">
-                        <img src="img/groza-ultra-vr.jpg" alt="">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Гроза Ультра, ВР</h3>
                         <div class="product-card__btns">
                             <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
                         </div>

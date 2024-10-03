@@ -7,9 +7,16 @@ $routes = [
     'whatToDo' => fn() => renderPage('main'),
   ],
 
-  '/katalog' => [
+  '/katalog/svezhie-ovoshi-i-frukty' => [
     'whatToDo' => fn() => renderPage('katalog', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog']]),
   ],
+  '/katalog/udobreniya' => [
+    'whatToDo' => fn() => renderPage('katalog', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog']]),
+  ],
+  '/katalog/szr' => [
+    'whatToDo' => fn() => renderPage('katalog', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog']]),
+  ],
+
   '/katalog/szr/supra-se' => [
     'whatToDo' => fn() => renderPage('katalog/szr/supra-se', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog?cat=szr', 'Супра, СЭ' => '/katalog/szr/supra-se']]),
   ],

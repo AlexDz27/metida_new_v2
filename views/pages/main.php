@@ -3,7 +3,7 @@
       <h1>Семена, которые растят успех!</h1>
       <div class="greeting-row section__subtitle">
         <p>Мы предлагаем оптовые поставки высококачественных полевых и овощных семян пшеницы, ржи и кукурузы,<br> а также средства защиты растений.</p>
-        <a href="/catalog.php" class="btn-cta btn-cta-with-glow">Наша продукция</a>
+        <a href="/katalog/szr" class="btn-cta btn-cta-with-glow">Наша продукция</a>
       </div>
     </div>
     <div class="greeting-slider swiper">
@@ -115,14 +115,21 @@
           <button class="btn-cta" type="button">Подробнее</button>
         </div>
       </a>
-      <a href="javascript:void(0)" class="products-intro-item">
+      <a href="/katalog/svezhie-ovoshi-i-frukty" class="products-intro-item">
         <img src="style/img/svezh-ov-prod.png">
         <div class="products-intro-item-text">
           <p>Свежие овощи и фрукты</p>
           <button class="btn-cta" type="button">Подробнее</button>
         </div>
       </a>
-      <a href="javascript:void(0)" class="products-intro-item">
+      <a href="/katalog/udobreniya" class="products-intro-item products-intro-item-udobr">
+        <img src="style/img/udobr.jpg">
+        <div class="products-intro-item-text">
+          <p>Удобрения</p>
+          <button class="btn-cta" type="button">Подробнее</button>
+        </div>
+      </a>
+      <a href="/katalog/szr" class="products-intro-item">
         <img src="style/img/szr.png">
         <div class="products-intro-item-text">
           <p>Средства защиты растений</p>
@@ -245,7 +252,7 @@
   <section class="press cont">
     <h2>Пресс-центр</h2>
     <p class="section__subtitle">Lorem ipsum dolor sit amet consectetur. Sollicitudin neque molestie netus eget mattis lacus augue. Tortor sit posuere pellentesque praesent enim erat tincidunt.</p>
-    <a href="javascript:void(0)" class="news-item">
+    <a href="/news/news-single" class="news-item">
       <img src="style/img/news-1.png">
       <div class="news-details-col news-details-col-1">
         <p>Lorem ipsum dolor sit amet consectetur. Massa bibendum molestie congue amet pellentesque eget aliquam.</p>
@@ -256,7 +263,7 @@
         <button type="button" class="news-details-btn-read">Читать</button>
       </div>
     </a>
-    <a href="javascript:void(0)" class="news-item">
+    <a href="/news/news-single" class="news-item">
       <img src="style/img/news-2.png">
       <div class="news-details-col news-details-col-1">
         <p>Lorem ipsum dolor sit amet consectetur. Massa bibendum molestie congue amet pellentesque eget aliquam.</p>
@@ -267,7 +274,7 @@
         <button class="news-details-btn-read" type="button">Читать</button>
       </div>
     </a>
-    <a href="javascript:void(0)" class="news-item">
+    <a href="/news/news-single" class="news-item">
       <img src="style/img/news-3.png">
       <div class="news-details-col news-details-col-1">
         <p>Lorem ipsum dolor sit amet consectetur. Massa bibendum molestie congue amet pellentesque eget aliquam.</p>

@@ -1,3 +1,24 @@
+// Tabs
+$(".product-tabs").each(function(i, el) {
+    
+  $(el).find(".product-tabs__tab").each(function(index, tab) {
+      $(tab).attr("data-tab-id", index)
+  })
+  $(el).find(".product-tabs__content").each(function(index, tab) {
+      $(tab).attr("data-tab-id", index)
+  })
+
+});
+
+$(".product-tabs__tab").click(function() {
+  let tabId = $(this).attr("data-tab-id")
+  $(this).parents(".product-tabs__header").find(".product-tabs__tab").removeClass("product-tabs__tab_active")
+  $(this).addClass("product-tabs__tab_active")
+
+  $(this).parents(".product-tabs").find(`.product-tabs__content`).hide()
+  $(this).parents(".product-tabs").find(`.product-tabs__content[data-tab-id=${tabId}]`).show()
+})
+
 // BURGER
 const burgerBtn = document.querySelector('.burger')
 const burgerMenu = document.querySelector('.burger-menu')
@@ -32,8 +53,10 @@ ostZayavFormCntCloseBtn.onclick = () => {
 window.addEventListener('click', (e) => {
   if (e.target === ostZayavBtn) return
   if (ostZayavFormCnt.contains(e.target) && !e.target.classList.contains('popup')) return
-
   ostZayavFormCnt.style.display = 'none'
+
+  if (spasibo.contains(e.target) && !e.target.classList.contains('popup')) return
+  spasibo.style.display = 'none'
 })
 document.onkeydown = (e) => {
   if (e.key === 'Escape') {
@@ -279,7 +302,7 @@ form.onsubmit = (e) => {
     .then(r => r.text())
     .then(r => {
       submitBtn.disabled = false
-      alert(r)
+      spasibo.style.display = 'flex'
     })
 }
 

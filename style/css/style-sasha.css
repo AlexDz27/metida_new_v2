@@ -884,6 +884,11 @@ nav a:hover {
   transform: translateY(-90px);
 }
 
+.products-intro-item-udobr img {
+  width: 369px;
+  height: 344px;
+}
+
 .products-intro-item .btn-cta::before, .products-intro-item .btn-green::before {
   transition: opacity 0.75s linear;
 }
@@ -978,7 +983,7 @@ nav a:hover {
 
 .photogallery-btn svg {
   position: relative;
-  top: 2px;
+  top: 1px;
 }
 
 .photogallery-btn-prev {
@@ -1469,6 +1474,11 @@ iframe {
 footer {
   display: flex;
   margin-bottom: 85px;
+}
+
+footer p {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 footer .col-1 {
@@ -2647,6 +2657,7 @@ footer .col-3 span:first-child {
   text-align: left;
   vertical-align: top;
   padding: 10px 10px 20px;
+  min-width: 429px;
 }
 .product-table-wrapper table td {
   font-style: normal;
@@ -3047,20 +3058,9 @@ footer .col-3 span:first-child {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  -webkit-appearance: none;
-  appearance: none;
   background: #FAFAFA;
   border: 1px solid #DADADA;
   position: relative;
-}
-.popup__confirm input:checked::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  bottom: 2px;
-  left: 2px;
-  right: 2px;
-  background: #3D3838;
 }
 .popup__btn {
   margin-top: 25px;
