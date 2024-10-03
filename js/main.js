@@ -1,24 +1,3 @@
-// Tabs
-$(".product-tabs").each(function(i, el) {
-    
-  $(el).find(".product-tabs__tab").each(function(index, tab) {
-      $(tab).attr("data-tab-id", index)
-  })
-  $(el).find(".product-tabs__content").each(function(index, tab) {
-      $(tab).attr("data-tab-id", index)
-  })
-
-});
-
-$(".product-tabs__tab").click(function() {
-  let tabId = $(this).attr("data-tab-id")
-  $(this).parents(".product-tabs__header").find(".product-tabs__tab").removeClass("product-tabs__tab_active")
-  $(this).addClass("product-tabs__tab_active")
-
-  $(this).parents(".product-tabs").find(`.product-tabs__content`).hide()
-  $(this).parents(".product-tabs").find(`.product-tabs__content[data-tab-id=${tabId}]`).show()
-})
-
 // BURGER
 const burgerBtn = document.querySelector('.burger')
 const burgerMenu = document.querySelector('.burger-menu')
@@ -67,6 +46,15 @@ document.onkeydown = (e) => {
 spasibo.querySelector('button').addEventListener('click', () => {
   spasibo.style.display = 'none'
 })
+
+// Form in Оставить заявку popup
+const formOZ = document.querySelector('form.popup__inner')
+const submitBtnOZ = formOZ.querySelector('button[type=submit]')
+formOZ.onsubmit = (e) => {
+  e.preventDefault()
+  ostZayavFormCnt.style.display = 'none'
+  spasibo.style.display = 'flex'
+}
 
 // SLIDER
 // load нужен чтобы slideWidth четко брался из того положения, когда видео уже реально встало как надо благодаря CSS. Иначе может быть "баг", что slideWidth берется меньший чем нужно из-за, как я понимаю, того что CSS еще не придал тегу video нужные размеры
@@ -201,91 +189,6 @@ window.addEventListener('load', () => {
     timeLine.classList.add('time-line--disappear')
   }
 })
-
-// Photogallery slider
-// const photoGalleryStageReal = document.querySelector('.photogallery-cont-stage-real')
-// photoGalleryStageReal.style.width = document.documentElement.clientWidth + 'px'
-
-// const photoGallery = document.querySelector('.photogallery')
-// const photogalleryContTrack = photoGallery.querySelector('.photogallery-cont-stage')
-// const prevBtnP = photoGallery.querySelector('.photogallery-btn-prev')
-// const nextBtnP = photoGallery.querySelector('.photogallery-btn-next')
-// let stageSlideP = 1
-// prevBtnP.onclick = () => {
-  // stageSlideP--;
-  // prevBtnP.disabled = !(stageSlideP > 0)
-  // nextBtnP.disabled = stageSlideP === 2
-
-  // photogalleryContTrack.style.transform = `translate3d(-${(638) * stageSlideP}px, 0, 0)`
-// }
-// nextBtnP.onclick = () => {
-  // stageSlideP++;
-  // prevBtnP.disabled = !(stageSlideP > 0)
-  // nextBtnP.disabled = stageSlideP === 2
-
-  // stuff2Track.style.transform = `translate3d(-${(638) * stageSlideP}px, 0, 0)`
-// }
-
-// Click and view photos
-// TODO: rem)
-// const imgs = photoGallery.querySelectorAll('img')
-// const overlay = document.querySelector('.overlay')
-// const overlayImgCont = overlay.querySelector('.overlay-img-cont')
-// imgs.forEach(img => {
-//   img.addEventListener('click', () => {
-//     overlay.style.display = 'block'
-
-//     const cloned = img.cloneNode()
-//     overlayImgCont.style.top = `calc(50% - ${675}px / 2)`
-//     overlayImgCont.style.left = `calc(50% - ${1100}px / 2)`
-
-//     overlayImgCont.insertAdjacentElement('afterbegin', cloned)
-//     overlayImgCont.querySelector('img').style.maxWidth = '1100px'
-//   })
-// })
-// overlay.addEventListener('click', (e) => {
-//   if (e.target.tagName === 'IMG') return
-
-//   overlay.style.display = 'none'
-//   overlay.querySelector('img').remove()
-// })
-// document.onkeydown = (e) => {
-//   if (e.key === 'Escape') {
-//     overlay.style.display = 'none'
-//     overlay.querySelector('img').remove()
-//   }
-// }
-
-// Slider logos
-// const stuff2 = document.querySelector('.stuff-2')
-// const stuff2Track = stuff2.querySelector('.stuff-2-track')
-// const stuff2TrackWidth = stuff2.querySelector('.stuff-2-track').clientWidth
-// const prevBtn = stuff2.querySelector('#stuff2-prev')
-// const nextBtn = stuff2.querySelector('#stuff2-next')
-// let stageSlide = 0
-// prevBtn.onclick = () => {
-//   stageSlide--;
-//   prevBtn.disabled = !(stageSlide > 0)
-//   nextBtn.disabled = stageSlide === 2
-
-//   stuff2Track.style.transform = `translate3d(-${(stuff2TrackWidth) * stageSlide}px, 0, 0)`
-// }
-// nextBtn.onclick = () => {
-//   stageSlide++;
-//   prevBtn.disabled = !(stageSlide > 0)
-//   nextBtn.disabled = stageSlide === 2
-
-//   stuff2Track.style.transform = `translate3d(-${(stuff2TrackWidth) * stageSlide}px, 0, 0)`
-// }
-
-// Form in Оставить заявку popup
-const formOZ = document.querySelector('form.popup__inner')
-const submitBtnOZ = formOZ.querySelector('button[type=submit]')
-formOZ.onsubmit = (e) => {
-  e.preventDefault()
-  ostZayavFormCnt.style.display = 'none'
-  spasibo.style.display = 'flex'
-}
 
 // Form in section
 const form = document.querySelector('form.cont')

@@ -2443,7 +2443,7 @@ footer .col-3 span:first-child {
 .product__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: none;
 }

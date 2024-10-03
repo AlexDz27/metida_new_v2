@@ -3,7 +3,7 @@
       <h1>Семена, которые растят успех!</h1>
       <div class="greeting-row section__subtitle">
         <p>Мы предлагаем оптовые поставки высококачественных полевых и овощных семян пшеницы, ржи и кукурузы,<br> а также средства защиты растений.</p>
-        <a href="/katalog/szr" class="btn-cta btn-cta-with-glow">Наша продукция</a>
+        <a href="/katalog/udobreniya" class="btn-cta btn-cta-with-glow">Наша продукция</a>
       </div>
     </div>
     <div class="greeting-slider swiper">

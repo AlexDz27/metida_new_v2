@@ -97,7 +97,7 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                     <div class="product-card__content">
                         <h3 class="product-card__title">Монокалийфосфат</h3>
                         <div class="product-card__btns">
-                            <a href="product.html" class="btn-outline">Подробнее </a>
+                            <a href="/katalog/udobreniya/monokaliyfosfat" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                     <div class="product-card__content">
                         <h3 class="product-card__title">Сульфат калия</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <a href="/katalog/udobreniya/sulfat-kaliya" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                     <div class="product-card__content">
                         <h3 class="product-card__title">Чугур, СК</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <a href="/katalog/szr/chugur-sk" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +142,7 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                     <div class="product-card__content">
                         <h3 class="product-card__title">Куница, КС</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <a href="/katalog/szr/kunicza-ks" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                     <div class="product-card__content">
                         <h3 class="product-card__title">Метатрон, КС</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <a href="/katalog/szr/metatron-ks" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                     <div class="product-card__content">
                         <h3 class="product-card__title">Гроза, ВР</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <a href="/katalog/szr/groza-vr" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                     <div class="product-card__content">
                         <h3 class="product-card__title">Гроза Ультра, ВР</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <a href="/katalog/szr/groza-ultra-vr" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                     <div class="product-card__content">
                         <h3 class="product-card__title">Гербисан, СЭ</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <a href="/katalog/szr/gerbisan-se" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>
@@ -197,7 +197,7 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                     <div class="product-card__content">
                         <h3 class="product-card__title">Бетрисан, КЭ</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <a href="/katalog/szr/betrisan-ke" class="btn-outline">Подробнее </a>
                         </div>
                     </div>
                 </div>

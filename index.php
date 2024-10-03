@@ -8,23 +8,48 @@ $routes = [
   ],
 
   '/katalog/svezhie-ovoshi-i-frukty' => [
-    'whatToDo' => fn() => renderPage('katalog', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog']]),
+    'whatToDo' => fn() => renderPage('katalog', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog/udobreniya']]),
   ],
   '/katalog/udobreniya' => [
-    'whatToDo' => fn() => renderPage('katalog', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog']]),
+    'whatToDo' => fn() => renderPage('katalog', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog/udobreniya']]),
   ],
   '/katalog/szr' => [
-    'whatToDo' => fn() => renderPage('katalog', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog']]),
+    'whatToDo' => fn() => renderPage('katalog', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog/udobreniya']]),
+  ],
+
+  '/katalog/udobreniya/nitrat-kaltsiya' => [
+    'whatToDo' => fn() => renderPage('katalog/udobreniya/nitrat-kaltsiya', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'Удобрения' => '/katalog/udobreniya', 'Нитрат кальция Концентрированный' => '/katalog/udobreniya/nitrat-kaltsiya']]),
+  ],
+  '/katalog/udobreniya/monokaliyfosfat' => [
+    'whatToDo' => fn() => renderPage('katalog/udobreniya/monokaliyfosfat', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'Удобрения' => '/katalog/udobreniya', 'Монокалийфосфат' => '/katalog/udobreniya/monokaliyfosfat']]),
+  ],
+  '/katalog/udobreniya/sulfat-kaliya' => [
+    'whatToDo' => fn() => renderPage('katalog/udobreniya/sulfat-kaliya', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'Удобрения' => '/katalog/udobreniya', 'Сульфат калия' => '/katalog/udobreniya/sulfat-kaliya']]),
   ],
 
   '/katalog/szr/supra-se' => [
-    'whatToDo' => fn() => renderPage('katalog/szr/supra-se', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog?cat=szr', 'Супра, СЭ' => '/katalog/szr/supra-se']]),
+    'whatToDo' => fn() => renderPage('katalog/szr/supra-se', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog/udobreniya', 'СЗР' => '/katalog/szr', 'Супра, СЭ' => '/katalog/szr/supra-se']]),
   ],
   '/katalog/szr/chugur-sk' => [
-    'whatToDo' => fn() => renderPage('katalog/szr/chugur-sk', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog?cat=szr', 'Чугур, СК' => '/katalog/szr/chugur-sk']]),
+    'whatToDo' => fn() => renderPage('katalog/szr/chugur-sk', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog/szr', 'Чугур, СК' => '/katalog/szr/chugur-sk']]),
   ],
-  '/katalog/udobreniya/nitrat-kaltsiya' => [
-    'whatToDo' => fn() => renderPage('katalog/udobreniya/nitrat-kaltsiya', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'Удобрения' => '/katalog?cat=udobreniya', 'Нитрат кальция Концентрированный' => '/katalog/udobreniya/nitrat-kaltsiya']]),
+  '/katalog/szr/kunicza-ks' => [
+    'whatToDo' => fn() => renderPage('katalog/szr/kunicza-ks', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog/szr', 'Куница, КС' => '/katalog/szr/kunicza-ks']]),
+  ],
+  '/katalog/szr/metatron-ks' => [
+    'whatToDo' => fn() => renderPage('katalog/szr/metatron-ks', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog/szr', 'Метатрон, КС' => '/katalog/szr/metatron-ks']]),
+  ],
+  '/katalog/szr/groza-vr' => [
+    'whatToDo' => fn() => renderPage('katalog/szr/groza-vr', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog/szr', 'Гроза, ВР' => '/katalog/szr/groza-vr']]),
+  ],
+  '/katalog/szr/groza-ultra-vr' => [
+    'whatToDo' => fn() => renderPage('katalog/szr/groza-ultra-vr', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog/szr', 'Гроза Ультра, ВР' => '/katalog/szr/groza-ultra-vr']]),
+  ],
+  '/katalog/szr/gerbisan-se' => [
+    'whatToDo' => fn() => renderPage('katalog/szr/gerbisan-se', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog/szr', 'Гербисан, СЭ' => '/katalog/szr/gerbisan-se']]),
+  ],
+  '/katalog/szr/betrisan-ke' => [
+    'whatToDo' => fn() => renderPage('katalog/szr/betrisan-ke', ['breadcrumbs' => ['Главная' => '/', 'Каталог' => '/katalog', 'СЗР' => '/katalog/szr', 'Бетрисан, КЭ' => '/katalog/szr/betrisan-ke']]),
   ],
 
   '/about' => [

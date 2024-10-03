@@ -6,18 +6,27 @@
   <title>МЕТИДА-ТОРГ</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20240930171805">
   <link rel="stylesheet" href="/style/css/style-sasha.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805" defer></script>
+  <?php if ($pageName === 'main'): ?>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805" defer></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805" defer></script>
+  <?php elseif (str_contains($pageName, 'katalog')): ?>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805"></script>
+  <?php endif; ?>  
   <script src="/js/magnific.min.js" defer></script>
   <!-- <script src="js/app.min.js" defer></script> -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <script src="/js/main.js" defer></script>
+  <?php if ($pageName === 'main'): ?>
+    <script src="/js/main.js" defer></script>
+  <?php elseif (str_contains($pageName, 'katalog')): ?>
+    <script src="/js/katalog.js" defer></script>
+  <?php endif; ?>  
 </head>
   <body>
     <section class="popup" data-popup="1">
       <form class="popup__inner">
           <div class="popup__close">
-              <img id="popupClose" src="style/img/close.svg" alt="">
+              <img id="popupClose" src="/style/img/close.svg" alt="">
           </div>
           <h2 class="popup__title">Оставьте заявку</h2>
           <p class="popup__subtitle">
@@ -46,7 +55,7 @@
     <section class="popup spasibo" data-popup="2">
       <form class="popup__inner">
           <div class="popup__cover">
-              <img src="style/img/spasibo.jpg" alt="">
+              <img src="/style/img/spasibo.jpg" alt="">
           </div>
           <h2 class="popup__title">Спасибо за обращение!</h2>
           <p class="popup__subtitle">
