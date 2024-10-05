@@ -78,6 +78,17 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
                         </div>
                     </div>
                 </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="/img/katalog/svezhie-ovoshi-i-frukty/cherry.jpg" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Томат Черри</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
             <?php elseif ($curCat === 'udobreniya'): ?>
               <div class="catalog__product product-card catalog__product-nitrat">
                   <div class="product-card__img">

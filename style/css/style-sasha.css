@@ -2659,6 +2659,12 @@ footer .col-3 span:first-child {
   padding: 10px 10px 20px;
   min-width: 429px;
 }
+.table-szr th {
+  min-width: auto !important;
+}
+.rowspan {
+  vertical-align: middle !important;
+}
 .product-table-wrapper table td {
   font-style: normal;
   font-weight: 400;
