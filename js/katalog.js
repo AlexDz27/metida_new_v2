@@ -136,4 +136,65 @@ const products = [
     url: '/katalog/szr/betrisan-ke'
   },
 ]
-// TODO: LINKS
+const search = document.querySelector('input[type=search]')
+const searchResultsCnt = document.querySelector('.search-input-results')
+search.addEventListener('input', (e) => {
+  searchResultsCnt.innerHTML = ''
+  const input = e.target.value
+  if (input === '') return
+
+  products.forEach(p => {
+    if (p.name.toLowerCase().includes(input.toLowerCase())) {
+      console.debug(p.name)
+      searchResultsCnt.innerHTML += `
+        <a href="${p.url}" class="search-input-result">
+          <img src="${p.img}" alt="">
+          <span>${p.name}</span>
+        </a>
+      `
+    }
+  })
+  console.debug('-----')
+})
+search.addEventListener('focus', () => {
+  searchResultsCnt.innerHTML = ''
+  searchResultsCnt.style.display = 'block'
+  if (search.value === '') return
+
+  products.forEach(p => {
+    if (p.name.toLowerCase().includes(search.value.toLowerCase())) {
+      searchResultsCnt.innerHTML += `
+        <a href="${p.url}" class="search-input-result">
+          <img src="${p.img}" alt="">
+          <span>${p.name}</span>
+        </a>
+      `
+    }
+  })
+})
+window.addEventListener('click', (e) => {
+  console.log(e.target)
+  console.log(e.target === search)
+  if (e.target === search) return
+
+  searchResultsCnt.style.display = 'none'
+})
+
+// Показать/спрятать продукты СЗР в зависимости от подкатегории
+const sidebarItems = document.querySelectorAll('.catalog-sidebar__item')
+sidebarItems.forEach((i) => {
+  i.addEventListener('click', () => {
+    document.querySelectorAll('.catalog__product').forEach(p => {
+      p.style.display = 'block'
+    })
+
+    if (i.innerText === 'Гербициды') {
+      document.querySelector('#chugur').style.display = 'none'
+    } else if (i.innerText === 'Фунгициды') {
+      document.querySelectorAll('.catalog__product').forEach(p => {
+        p.style.display = 'none'
+      })
+      document.querySelector('#chugur').style.display = 'block'
+    }
+  })
+})

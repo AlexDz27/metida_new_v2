@@ -2262,6 +2262,27 @@ footer .col-3 span:first-child {
   right: 20px;
   translate: 0 -50%;
 }
+.search-input-results {
+  display: none;
+  width: 100%;
+  position: absolute;
+  z-index: 5000;
+}
+.search-input-result {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #fcfbfb;
+  font-size: 20px;
+  border-bottom: 1px solid #d3cece;
+}
+.search-input-result:last-child {
+  border-bottom: none;
+}
+.search-input-result img {
+  width: 30px;
+  margin-right: 10px;
+}
 
 .catalog {
   display: flex;
@@ -2361,6 +2382,7 @@ footer .col-3 span:first-child {
   color: #274C5B;
   border: 1px solid #AFAAAA;
   background: #F9F9F9;
+  cursor: pointer;
 }
 .catalog-sidebar__item:not(:first-child) {
   border-top: none;
