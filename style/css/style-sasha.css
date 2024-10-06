@@ -2350,6 +2350,12 @@ footer .col-3 span:first-child {
 .catalog__product {
   flex: 0 0 calc(33.33% - 20px);
 }
+.catalog__product:hover {
+  text-decoration: none;
+}
+.catalog__product:hover span {
+  text-decoration: underline;
+}
 .catalog__product-nitrat img {
   object-position: center top;
 }

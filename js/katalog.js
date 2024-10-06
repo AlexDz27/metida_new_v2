@@ -20,6 +20,7 @@ window.addEventListener('click', (e) => {
 
 // Оставить заявку
 const ostZayavBtn = document.querySelector('#ost-zayav')
+const zakazBtn = document.querySelector('#zakaz') // Кнопка ЗАКАЗАТЬ, которая находится пониже
 const ostZayavFormCnt = document.querySelector('.popup')
 const ostZayavFormCntCloseBtn = document.querySelector('#popupClose')
 const spasibo = document.querySelector('.spasibo')
@@ -31,6 +32,7 @@ ostZayavFormCntCloseBtn.onclick = () => {
 }
 window.addEventListener('click', (e) => {
   if (e.target === ostZayavBtn) return
+  if (e.target === zakazBtn) return
   if (ostZayavFormCnt.contains(e.target) && !e.target.classList.contains('popup')) return
   ostZayavFormCnt.style.display = 'none'
 
@@ -54,6 +56,28 @@ formOZ.onsubmit = (e) => {
   e.preventDefault()
   ostZayavFormCnt.style.display = 'none'
   spasibo.style.display = 'flex'
+  const formData = new FormData(formOZ)
+  fetch('/receive-applications.php', {
+    method: 'POST',
+    body: formData
+  })
+    .then(r => r.text())
+    .then(r => {
+      spasibo.style.display = 'flex'
+    })
+
+  setTimeout(() => {
+    alert(`
+Примерно так будет выглядеть заявка:
+
+${getDateTime()}
+Иван Иванов
++375 (33) 819 12 24 ${formData.get('email') ? '\nivanivanov@myorg.by' : ''}
+ООО "Яблоневый сад"
+
+Хочу закупить средство защиты растений "СУПРА, СЭ". Свяжитесь со мной и сделайте коммерческое предложение…
+`)
+  }, 1000)
 }
 
 // Tabs
@@ -80,57 +104,68 @@ $(".product-tabs__tab").click(function() {
 // Search
 const products = [
   {
+    id: 'nitrat-kaltsiya',
     name: 'Нитрат кальция',
     img: '/img/katalog/udobreniya/kalc.png',
     url: '/katalog/udobreniya/nitrat-kaltsiya'
   },
   {
+    id: 'monokaliyfosfat',
     name: 'Монокалийфосфат',
     img: '/img/katalog/udobreniya/mono.jpg',
     url: '/katalog/udobreniya/monokaliyfosfat'
   },
   {
+    id: 'sulfat-kaliya',
     name: 'Сульфат калия',
     img: '/img/katalog/udobreniya/sulf.jpg',
     url: '/katalog/udobreniya/sulfat-kaliya'
   },
 
   {
+    id: 'supra-se',
     name: 'Супра, СЭ',
     img: '/img/katalog/szr/supra-se-transp.png',
     url: '/katalog/szr/supra-se'
   },
   {
+    id: 'chugur-sk',
     name: 'Чугур, СК',
     img: '/img/katalog/szr/chugur-sk.jpg',
     url: '/katalog/szr/chugur-sk'
   },
   {
+    id: 'kunicza-ks',
     name: 'Куница, КС',
     img: '/img/katalog/szr/kunicza-ks.jpg',
     url: '/katalog/szr/kunicza-ks'
   },
   {
+    id: 'metatron-ks',
     name: 'Метатрон, КС',
     img: '/img/katalog/szr/metatron-ks.jpg',
     url: '/katalog/szr/metatron-ks'
   },
   {
+    id: 'groza-vr',
     name: 'Гроза, ВР',
     img: '/img/katalog/szr/groza-vr.jpg',
     url: '/katalog/szr/groza-vr'
   },
   {
+    id: 'groza-ultra-vr',
     name: 'Гроза Ультра, ВР',
     img: '/img/katalog/szr/groza-ultra-vr.jpg',
     url: '/katalog/szr/groza-ultra-vr'
   },
   {
+    id: 'gerbisan-se',
     name: 'Гербисан, СЭ',
     img: '/img/katalog/szr/gerbisan-se.jpg',
     url: '/katalog/szr/gerbisan-se'
   },
   {
+    id: 'betrisan-ke',
     name: 'Бетрисан, КЭ',
     img: '/img/katalog/szr/bretiskan-big__jpg.jpg',
     url: '/katalog/szr/betrisan-ke'
@@ -173,8 +208,6 @@ search.addEventListener('focus', () => {
   })
 })
 window.addEventListener('click', (e) => {
-  console.log(e.target)
-  console.log(e.target === search)
   if (e.target === search) return
 
   searchResultsCnt.style.display = 'none'
@@ -184,6 +217,8 @@ window.addEventListener('click', (e) => {
 const sidebarItems = document.querySelectorAll('.catalog-sidebar__item')
 sidebarItems.forEach((i) => {
   i.addEventListener('click', () => {
+    document.querySelector('.catalog-sidebar__item_active').classList.remove('catalog-sidebar__item_active')
+    i.classList.add('catalog-sidebar__item_active')
     document.querySelectorAll('.catalog__product').forEach(p => {
       p.style.display = 'block'
     })
@@ -198,3 +233,45 @@ sidebarItems.forEach((i) => {
     }
   })
 })
+
+// TODO: везде подобавлять айдишники
+// Функционал, чтоб когда нажал на кнопку ЗАКАЗАТЬ, которая находится ниже, заполнялась textarea с выбранным продуктом
+const windowLocPathSplit = window.location.pathname.split('/')
+const curProductRoute = windowLocPathSplit.pop() // unused
+const curProductCat = windowLocPathSplit.pop()
+const productCatToReadable = {
+  'udobreniya': 'удобрение',
+  'szr': 'средство защиты растений',
+}
+const productName = document.querySelector('.product__title')?.innerText
+zakazBtn?.addEventListener('click', () => {
+  ostZayavFormCnt.style.display = 'flex'
+  ostZayavFormCnt.querySelector('textarea').value = `Хочу закупить ${productCatToReadable[curProductCat]} "${productName}". Свяжитесь со мной и сделайте коммерческое предложение…`
+})
+
+function getDateTime() {
+  var now     = new Date(); 
+  var year    = now.getFullYear();
+  var month   = now.getMonth()+1; 
+  var day     = now.getDate();
+  var hour    = now.getHours();
+  var minute  = now.getMinutes();
+  var second  = now.getSeconds(); 
+  if(month.toString().length == 1) {
+       month = '0'+month;
+  }
+  if(day.toString().length == 1) {
+       day = '0'+day;
+  }   
+  if(hour.toString().length == 1) {
+       hour = '0'+hour;
+  }
+  if(minute.toString().length == 1) {
+       minute = '0'+minute;
+  }
+  if(second.toString().length == 1) {
+       second = '0'+second;
+  }   
+  var dateTime = day+'.'+month+'.'+year+' '+hour+':'+minute+':'+second;
+  return dateTime;
+}

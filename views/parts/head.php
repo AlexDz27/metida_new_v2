@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="/style/css/style-sasha.css">
   <?php if ($pageName === 'main'): ?>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805" defer></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805" defer></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805" defer></script>
   <?php elseif (str_contains($pageName, 'katalog')): ?>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805"></script>
   <?php endif; ?>  
   <script src="/js/magnific.min.js" defer></script>
   <!-- <script src="js/app.min.js" defer></script> -->
@@ -34,15 +34,15 @@
           </p>
           <div class="popup__inputs">
               <label for="" class="popup__label">Ваше имя</label>
-              <input class="popup__input" type="text" placeholder="Иван Иванов" required>
+              <input class="popup__input" name="name" placeholder="Иван Иванов" required>
               <label for="" class="popup__label">Номер телефона</label>
-              <input class="popup__input" type="text" placeholder="+375 (29) XXX–XX–XX" data-tel-by-input required>
+              <input class="popup__input" name="phone" placeholder="+375 (29) XXX–XX–XX" data-tel-by-input required>
               <label for="" class="popup__label">Email (необязательно)</label>
-              <input class="popup__input" type="text" placeholder="pochta@mail.by">
+              <input class="popup__input" name="email" placeholder="pochta@mail.by">
               <label for="" class="popup__label">Название вашей организации</label>
-              <input class="popup__input" type="text" placeholder="ООО «Метида-торг»" required>
+              <input class="popup__input" name="company" placeholder="ООО «Метида-торг»" required>
               <label for="" class="popup__label">Ваше сообщение</label>
-              <textarea class="popup__input" rows="3" required placeholder="Хочу закупить кукурузу. Свяжитесь со мной и сделайте коммерческое предложение…"></textarea>
+              <textarea class="popup__input" rows="3" name="msg" required placeholder="Хочу закупить кукурузу. Свяжитесь со мной и сделайте коммерческое предложение…"></textarea>
               <label class="popup__confirm">
                   <input type="checkbox" required>
                   Согласен на обработку персональных данных

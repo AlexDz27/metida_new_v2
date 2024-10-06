@@ -1,29 +1,7 @@
 <?php
 $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
 ?>
-<div class="breadcrumbs-wrapper container">
-
-    <section class="breadcrumbs">
-    
-        <?php foreach ($breadcrumbs as $bName => $bLink): ?>
-          <a href="<?= $bLink ?>" class="breadcrumbs__item"><?= $bName ?></a>
-          <?php if (end($breadcrumbs) !== $bLink): ?>
-            <div class="breadcrumbs__arrow">
-              <img src="/style/img/breadcrumbs-arrow.svg" alt="">
-            </div>
-          <?php endif ?>
-        <?php endforeach ?>  
-        
-    </section>
-
-    <div class="search-input">
-        <input type="search" name="" id="" placeholder="Поиск">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19.6714 18.0942L15.8949 14.3287C17.1134 12.7764 17.7745 10.8595 17.7721 8.88603C17.7721 7.12854 17.2509 5.41052 16.2745 3.94922C15.2981 2.48792 13.9103 1.34897 12.2866 0.676412C10.6629 0.00385016 8.87617 -0.172123 7.15245 0.170746C5.42873 0.513616 3.84539 1.35993 2.60266 2.60266C1.35993 3.84539 0.513616 5.42873 0.170746 7.15245C-0.172123 8.87617 0.00385016 10.6629 0.676412 12.2866C1.34897 13.9103 2.48792 15.2981 3.94922 16.2745C5.41052 17.2509 7.12854 17.7721 8.88603 17.7721C10.8595 17.7745 12.7764 17.1134 14.3287 15.8949L18.0942 19.6714C18.1974 19.7755 18.3203 19.8582 18.4556 19.9146C18.591 19.971 18.7362 20 18.8828 20C19.0294 20 19.1746 19.971 19.31 19.9146C19.4453 19.8582 19.5682 19.7755 19.6714 19.6714C19.7755 19.5682 19.8582 19.4453 19.9146 19.31C19.971 19.1746 20 19.0294 20 18.8828C20 18.7362 19.971 18.591 19.9146 18.4556C19.8582 18.3203 19.7755 18.1974 19.6714 18.0942ZM2.22151 8.88603C2.22151 7.56791 2.61238 6.2794 3.34468 5.18342C4.07699 4.08745 5.11785 3.23324 6.33563 2.72882C7.55341 2.22439 8.89342 2.09242 10.1862 2.34957C11.479 2.60672 12.6665 3.24145 13.5986 4.1735C14.5306 5.10555 15.1653 6.29306 15.4225 7.58585C15.6796 8.87864 15.5477 10.2186 15.0432 11.4364C14.5388 12.6542 13.6846 13.6951 12.5886 14.4274C11.4927 15.1597 10.2041 15.5505 8.88603 15.5505C7.11849 15.5505 5.42334 14.8484 4.1735 13.5986C2.92366 12.3487 2.22151 10.6536 2.22151 8.88603Z" fill="#D9D9D9"/>
-        </svg>
-        <div class="search-input-results"></div>
-    </div>
-</div>
+<?php require "views/parts/breadcrumbsWithSearch.php" ?>
 
 <section class="container section">
     <h1 class="section__title">Каталог</h1>
@@ -57,162 +35,162 @@ $curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') 
             </div>
             <div class="catalog__products">
             <?php if ($curCat === 'svezhie-ovoshi-i-frukty'): ?>
-              <div class="catalog__product product-card">
+              <a href="javascript:void(0)" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/svezhie-ovoshi-i-frukty/og-sr.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Огурец среднеплодный</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <span href="" class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card">
+                </a>
+                <a href="javascript:void(0)" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/svezhie-ovoshi-i-frukty/apples-resized.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Яблоко</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card">
+                </a>
+                <a href="javascript:void(0)" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/svezhie-ovoshi-i-frukty/cherry.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Томат Черри</h3>
                         <div class="product-card__btns">
-                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
+                </a>
             <?php elseif ($curCat === 'udobreniya'): ?>
-              <div class="catalog__product product-card catalog__product-nitrat">
+              <a href="/katalog/udobreniya/nitrat-kaltsiya" class="catalog__product product-card catalog__product-nitrat">
                   <div class="product-card__img">
                       <img src="/img/katalog/udobreniya/kalc.png" alt="">
                   </div>
                   <div class="product-card__content">
                       <h3 class="product-card__title">Нитрат кальция</h3>
                       <div class="product-card__btns">
-                          <a href="/katalog/udobreniya/nitrat-kaltsiya" class="btn-outline">Подробнее </a>
+                          <span class="btn-outline">Подробнее </span>
                       </div>
                   </div>
-              </div>
-              <div class="catalog__product product-card">
+               </a>
+              <a href="/katalog/udobreniya/monokaliyfosfat" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/udobreniya/mono.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Монокалийфосфат</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/udobreniya/monokaliyfosfat" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card">
+                </a>
+                <a href="/katalog/udobreniya/sulfat-kaliya" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/udobreniya/sulf.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Сульфат калия</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/udobreniya/sulfat-kaliya" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
+                </a>
             <?php elseif ($curCat === 'szr'): ?>
-              <div class="catalog__product product-card catalog__product-supra">
+              <a href="/katalog/szr/supra-se" class="catalog__product product-card catalog__product-supra">
                     <div class="product-card__img">
                         <img src="/img/katalog/szr/supra.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Супра, СЭ</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/szr/supra-se" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card" id="chugur">
+                 </a>
+                <a href="/katalog/szr/chugur-sk" class="catalog__product product-card" id="chugur">
                     <div class="product-card__img">
                         <img src="/img/katalog/szr/chugur-sk.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Чугур, СК</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/szr/chugur-sk" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card">
+                </a>
+                <a href="/katalog/szr/kunicza-ks" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/szr/kunicza-ks.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Куница, КС</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/szr/kunicza-ks" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card">
+                </a>
+                <a href="/katalog/szr/metatron-ks" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/szr/metatron-ks.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Метатрон, КС</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/szr/metatron-ks" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card">
+                </a>
+                <a href="/katalog/szr/groza-vr" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/szr/groza-vr.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Гроза, ВР</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/szr/groza-vr" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card">
+                </a>
+                <a href="/katalog/szr/groza-ultra-vr" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/szr/groza-ultra-vr.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Гроза Ультра, ВР</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/szr/groza-ultra-vr" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card">
+                </a>
+                <a href="/katalog/szr/gerbisan-se" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/szr/gerbisan-se.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Гербисан, СЭ</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/szr/gerbisan-se" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
-                <div class="catalog__product product-card">
+                </a>
+                <a href="/katalog/szr/betrisan-ke" class="catalog__product product-card">
                     <div class="product-card__img">
                         <img src="/img/katalog/szr/bretiskan-big__jpg.jpg" alt="">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title">Бетрисан, КЭ</h3>
                         <div class="product-card__btns">
-                            <a href="/katalog/szr/betrisan-ke" class="btn-outline">Подробнее </a>
+                            <span class="btn-outline">Подробнее </span>
                         </div>
                     </div>
-                </div>
+                </a>
             <?php endif; ?> 
             </div>
         </div>

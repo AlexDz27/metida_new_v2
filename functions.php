@@ -23,3 +23,11 @@ function renderPage($pageName, $vars = []) {
   require "views/pages/$pageName.php";
   require "views/parts/footer.php";
 }
+
+function sendSpecForViewing($fileName) {
+  $filePath = 'views/pages/katalog/udobreniya/spec/' . $fileName;
+  header('Content-type: application/pdf');
+  header('Content-disposition: inline; filename="' . $fileName . '"');
+  header('Accept-Ranges: bytes');
+  readfile($filePath);
+}
