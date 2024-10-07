@@ -2,8 +2,6 @@
 
 require "functions.php";
 
-// TODO: tests before down (fuck it)
-// TODO: make nesting in routes (fuck it)
 $routes = [
   '/' => [
     'whatToDo' => fn() => renderPage('main'),

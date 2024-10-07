@@ -1,5 +1,6 @@
 <?php
-$curCat = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
+$uriTrimmed = rtrim($_SERVER['REQUEST_URI'], '/');
+$curCat = substr($uriTrimmed, strrpos($uriTrimmed, '/') + 1);
 ?>
 <?php require "views/parts/breadcrumbsWithSearch.php" ?>
 

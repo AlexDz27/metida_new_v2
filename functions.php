@@ -2,6 +2,9 @@
 
 function setRoutes($routes) {
   $uri = explode('?', $_SERVER['REQUEST_URI'])[0]; // explode to allow GET requests
+  if ($uri !== '/' && substr($uri, -1) === '/') { // allow trailing slash
+    $uri = rtrim($uri, '/');
+  }
   $method = $_SERVER['REQUEST_METHOD'];
   $route404 = array_pop($routes);
 

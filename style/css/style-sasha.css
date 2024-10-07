@@ -3539,3 +3539,10 @@ img.mfp-img {
     padding-right: 6px;
   }
 }
+
+.section-404 a {
+  text-decoration: underline;
+}
+.title-404 {
+  margin-bottom: 30px;
+}

@@ -3,19 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>МЕТИДА-ТОРГ</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20240930171805">
+  <?php if (str_contains($pageName, 'katalog')): ?>
+    <title>Каталог | МЕТИДА-ТОРГ</title>
+  <?php else: ?>
+    <title>МЕТИДА-ТОРГ</title>
+  <?php endif ?>  
+  <link rel="stylesheet" href="/style/css/swiper-bundle.min.css">
   <link rel="stylesheet" href="/style/css/style-sasha.css">
   <?php if ($pageName === 'main'): ?>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805" defer></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805" defer></script>
+    <script src="/js/jquery-3.3.1.min.js" defer></script>
+    <!-- TODO: minify ui; разве нужен он на мейне? -->
+    <script src="/js/jquery-ui.js" defer></script>
+    <script src="/js/magnific.min.js" defer></script>
   <?php elseif (str_contains($pageName, 'katalog')): ?>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805"></script>
+    <script src="/js/jquery-3.3.1.min.js" defer></script>
+    <script src="/js/jquery-ui.js" defer></script>
+    <script src="/js/magnific.min.js" defer></script>
+  <?php elseif ($pageName === 'about' || $pageName === 'contacts'): ?>
+    <script src="/js/main.js" defer></script>
   <?php endif; ?>  
-  <script src="/js/magnific.min.js" defer></script>
   <!-- <script src="js/app.min.js" defer></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="/js/swiper-bundle.min.js" defer></script>
   <?php if ($pageName === 'main'): ?>
     <script src="/js/main.js" defer></script>
   <?php elseif (str_contains($pageName, 'katalog')): ?>
