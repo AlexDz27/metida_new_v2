@@ -42,7 +42,7 @@ html {
   line-height: 21.6px;
   font-weight: 400;
   font-optical-sizing: auto;
-  /* TODO: add overflow-x: hidden when finishing  */
+  overflow-x: hidden;
 }
 
 h1 {

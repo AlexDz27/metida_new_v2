@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+aside {
+  text-align: right;
+}
+
+main {
+  width: 746px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 1px gray;
+  border-radius: 4px;
+  text-align: justify;
+  padding: 24px;
+}
+
+h1 {
+  font-size: 23px;
+}

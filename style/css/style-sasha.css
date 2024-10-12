@@ -432,7 +432,7 @@ html {
   line-height: 21.6px;
   font-weight: 400;
   font-optical-sizing: auto;
-  /* TODO: add overflow-x: hidden when finishing  */
+  overflow-x: hidden;
 }
 
 body {
@@ -502,6 +502,9 @@ h2 {
   position: relative;
   z-index: 1;
   text-align: center;
+}
+.btn-cta:focus {
+  outline: 5px solid yellow;
 }
 
 .btn-cta-with-glow {
@@ -884,6 +887,9 @@ nav a:hover {
   transform: translateY(-90px);
 }
 
+.products-intro-item-udobr {
+  overflow-x: hidden;
+}
 .products-intro-item-udobr img {
   width: 369px;
   height: 344px;
@@ -1326,10 +1332,6 @@ form button[type=submit]:hover {
   border-top: 1px solid #525C60;
   box-sizing: border-box;
   padding-top: 20px;
-  /* TODO: rem */
-  /* display: grid;
-  grid-template-columns: 381px 435px;
-  column-gap: 40px; */
 }
 
 .news-details-col {
@@ -1506,6 +1508,13 @@ footer .col-3 span {
 
 footer .col-3 span:first-child {
   font-weight: 500;
+}
+.pers {
+  text-decoration: underline;
+  display: flex;
+  width: 323px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .shifted-col {
@@ -1700,7 +1709,6 @@ footer .col-3 span:first-child {
     margin-bottom: 75px;
   }
   .advantages {
-    /* TODO:  */
     grid-template-columns: 370px 370px;
     grid-template-rows: 116px 134px 116px;
   }
@@ -1711,7 +1719,6 @@ footer .col-3 span:first-child {
     padding-bottom: 85px;
   }
   .advantages {
-    /* TODO:  */
     grid-template-columns: 335px;
     justify-content: center;
   }
@@ -1733,11 +1740,18 @@ footer .col-3 span:first-child {
   }
 }
 @media (max-width: 806px) {
+  .products-intro-item .products-intro-item-text {
+    transform: translateY(-90px);
+  }
+
+  .products-intro-item {
+    margin-right: 0 !important;
+  }
   .products-intro-item:nth-child(2n) {
-    margin-right: 41px;
+    margin-right: 0;
   }
   .products-intro-item:last-child {
-    margin-right: 41px;
+    margin-right: 0;
   }
 }
 /* Photogallery */
@@ -2405,11 +2419,12 @@ footer .col-3 span:first-child {
 .product-card__img {
   width: 100%;
   aspect-ratio: 278/177;
+  padding-top: 5px;
 }
 .product-card__img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .product-card__content {
   padding: 15px;
@@ -2994,7 +3009,7 @@ footer .col-3 span:first-child {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 3000;
   background: rgba(20, 36, 8, 0.5);
   backdrop-filter: blur(12.5px);
   -webkit-backdrop-filter: blur(12.5px);

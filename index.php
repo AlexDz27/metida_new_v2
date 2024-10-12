@@ -73,6 +73,9 @@ $routes = [
   '/contacts' => [
     'whatToDo' => fn() => renderPage('contacts', ['breadcrumbs' => ['Главная' => '/', 'Контакты' => '/contacts']]),
   ],
+  '/pers-danniye' => [
+    'whatToDo' => fn() => renderHtml('pers-danniye'),
+  ],
   '404' => [
     'whatToDo' => function() {
       http_response_code(404);

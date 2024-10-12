@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@editorjs/editorjs": "^2.30.6",
-    "@editorjs/header": "^2.8.7"
-  }
-}

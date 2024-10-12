@@ -14,15 +14,17 @@ window.addEventListener('click', (e) => {
 
   if (e.target === burgerBtn) return
   if (burgerMenu.contains(e.target)) return
+  if (e.target.classList.contains('dot')) return
 
   burgerMenu.classList.remove('burger-menu-active')
 })
 
 // Оставить заявку
 const ostZayavBtn = document.querySelector('#ost-zayav')
-const zakazBtn = document.querySelector('#zakaz') // Кнопка ЗАКАЗАТЬ, которая находится пониже
+const ostZayavBtnBurg = document.querySelector('#ost-zayav-burg')
 const ostZayavFormCnt = document.querySelector('.popup')
 const ostZayavFormCntCloseBtn = document.querySelector('#popupClose')
+const ostZayavForm = document.querySelector('#ostZayavForm')
 const spasibo = document.querySelector('.spasibo')
 ostZayavBtn.addEventListener('click', () => {
   ostZayavFormCnt.style.display = 'flex'
@@ -32,8 +34,9 @@ ostZayavFormCntCloseBtn.onclick = () => {
 }
 window.addEventListener('click', (e) => {
   if (e.target === ostZayavBtn) return
-  if (e.target === zakazBtn) return
+  if (e.target === ostZayavBtnBurg) return
   if (ostZayavFormCnt.contains(e.target) && !e.target.classList.contains('popup')) return
+  if (e.target.classList.contains('dot')) return
   ostZayavFormCnt.style.display = 'none'
 
   if (spasibo.contains(e.target) && !e.target.classList.contains('popup')) return
@@ -49,21 +52,27 @@ spasibo.querySelector('button').addEventListener('click', () => {
   spasibo.style.display = 'none'
 })
 
+ostZayavBtnBurg.addEventListener('click', (e) => {
+  ostZayavFormCnt.style.display = 'flex'
+})
+
 // Form in Оставить заявку popup
 const formOZ = document.querySelector('form.popup__inner')
 const submitBtnOZ = formOZ.querySelector('button[type=submit]')
 formOZ.onsubmit = (e) => {
   e.preventDefault()
-  ostZayavFormCnt.style.display = 'none'
-  spasibo.style.display = 'flex'
-  const formData = new FormData(formOZ)
+  const formData = new FormData(ostZayavForm)
   fetch('/receive-applications.php', {
     method: 'POST',
     body: formData
   })
     .then(r => r.text())
     .then(r => {
+      ostZayavFormCnt.style.display = 'none'
       spasibo.style.display = 'flex'
+    })
+    .catch(err => {
+      alert("Ошибка отправки формы: сайт не отвечает. Попробуйте связаться с нами по телефону или почте")
     })
 
   setTimeout(() => {

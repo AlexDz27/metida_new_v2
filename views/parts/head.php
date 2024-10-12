@@ -7,17 +7,16 @@
     <title>Каталог | МЕТИДА-ТОРГ</title>
   <?php else: ?>
     <title>МЕТИДА-ТОРГ</title>
-  <?php endif ?>  
+  <?php endif ?>
+  <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/style/css/swiper-bundle.min.css">
   <link rel="stylesheet" href="/style/css/style-sasha.css">
   <?php if ($pageName === 'main'): ?>
     <script src="/js/jquery-3.3.1.min.js" defer></script>
-    <!-- TODO: minify ui; разве нужен он на мейне? -->
-    <script src="/js/jquery-ui.js" defer></script>
     <script src="/js/magnific.min.js" defer></script>
   <?php elseif (str_contains($pageName, 'katalog')): ?>
     <script src="/js/jquery-3.3.1.min.js" defer></script>
-    <script src="/js/jquery-ui.js" defer></script>
+    <script src="/js/jquery-ui.min.js" defer></script>
     <script src="/js/magnific.min.js" defer></script>
   <?php elseif ($pageName === 'about' || $pageName === 'contacts'): ?>
     <script src="/js/main.js" defer></script>
@@ -32,7 +31,7 @@
 </head>
   <body>
     <section class="popup" data-popup="1">
-      <form class="popup__inner">
+      <form class="popup__inner" id="ostZayavForm">
           <div class="popup__close">
               <img id="popupClose" src="/style/img/close.svg" alt="">
           </div>

@@ -2,17 +2,22 @@
     <div class="col-1">
       <img src="/style/img/logo.png">
       <p>© Все права защищены. <?= date('Y') ?></p>
-      <p><a href="javascript:void(0)">Политика конфиденциальности</a></p>
     </div>
     <div class="col-2 shifted-col">
-      <a href="javascript:void(0)">О нас</a>
-      <a href="javascript:void(0)">Продукция</a>
-      <a href="javascript:void(0)">Новости</a>
-      <a href="javascript:void(0)">Контакты</a>
+      <a href="/about">О нас</a>
+      <a href="/katalog/udobreniya">Продукция</a>
+      <a href="/news">Новости</a>
+      <a href="/contacts">Контакты</a>
     </div>
     <div class="col-3 shifted-col">
       <span>+375 (17) 502—34—47</span>
       <span>metidatorg@gmail.com</span>
+      <a class="pers" href="/pers-danniye">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 3.5H5V19.5H19V8.5M14 3.5V8.5H19M14 3.5L19 8.5" stroke="#525C60" stroke-width="2"/>
+        </svg>
+        Политика обработки перс. данных
+      </a>
     </div>
   </footer>
 
@@ -21,14 +26,14 @@
       <button class="btn-close" type="button"></button>
     </div>
     <div class="nav-cont">
-      <a href="javascript:void(0)">О нас</a>
-      <a href="javascript:void(0)">Продукция</a>
-      <a href="javascript:void(0)">Новости</a>
-      <a href="javascript:void(0)">Контакты</a>
+      <a href="/about">О нас</a>
+      <a href="/katalog/udobreniya">Продукция</a>
+      <a href="/news">Новости</a>
+      <a href="/contacts">Контакты</a>
     </div>
     <hr>
     <div class="burger-contacts-cont">
-      <button class="btn-cta btn-cta-with-glow" type="button">Оставить заявку</button>
+      <button id="ost-zayav-burg" class="btn-cta btn-cta-with-glow" type="button">Оставить заявку</button>
       <div class="burger-top-menu-contacts top-menu-contacts">
         <div class="burger-top-menu-contacts-1">
           <span class="icon">

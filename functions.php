@@ -34,3 +34,7 @@ function sendSpecForViewing($fileName) {
   header('Accept-Ranges: bytes');
   readfile($filePath);
 }
+
+function renderHtml($fileName) {
+  require "views/pages/$fileName.html";
+}

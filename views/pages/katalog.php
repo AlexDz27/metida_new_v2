@@ -72,7 +72,7 @@ $curCat = substr($uriTrimmed, strrpos($uriTrimmed, '/') + 1);
             <?php elseif ($curCat === 'udobreniya'): ?>
               <a href="/katalog/udobreniya/nitrat-kaltsiya" class="catalog__product product-card catalog__product-nitrat">
                   <div class="product-card__img">
-                      <img src="/img/katalog/udobreniya/kalc.png" alt="">
+                      <img src="/img/katalog/udobreniya/nitr-kalc-transp.png" alt="">
                   </div>
                   <div class="product-card__content">
                       <h3 class="product-card__title">Нитрат кальция</h3>

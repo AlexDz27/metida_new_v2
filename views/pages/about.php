@@ -33,7 +33,8 @@
             </div>
             <div class="history__item">
                 <div class="history__year">2015</div>
-                <h3 class="history__title">Дистрибьютер Корпорации ТЕХНОНИКОЛь</h3>
+                <h3 class="history__title">Дистрибьютер Корпо-<br>рации ТЕХНОНИКОЛЬ</h3>
+                
                 <p class="history__text">Мы поставщики в РБ субстратов SPELAND из каменной ваты для выращивания растений по малообъёмной технологии</p>
             </div>
             <div class="history__item">
@@ -74,7 +75,7 @@
             <!-- Awards -->
             <section class="container single-news single-news_about section">
     <div class="single-news__title section__title">
-        <h2>Почему нам можно доверять</h2>
+        <h2>Наши достижения</h2>
     </div>
     <div class="single-news__cover">
         <img src="style/img/about/photo-3.png" alt="">
